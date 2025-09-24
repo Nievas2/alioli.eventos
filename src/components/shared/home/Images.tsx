@@ -1,6 +1,6 @@
 const Images = () => {
   return (
-    <div className="grid grid-cols-1 gap-4 md:grid-cols-4 grid-rows-8 lg:grid-cols-8 lg:grid-rows-8">
+    <div className="grid grid-cols-1 gap-4 md:grid-cols-4 grid-rows-8 lg:grid-cols-8 lg:grid-rows-8 p-4">
       <div className="col-span-1 md:col-span-2 md:row-span-3 lg:col-span-2 lg:row-span-6 bg-blue-main">
         1
       </div>
