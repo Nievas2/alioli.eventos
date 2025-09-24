@@ -1,9 +1,20 @@
+import { Route, Routes } from "react-router-dom"
+import Home from "./pages/Home"
+import AboutUs from "./pages/AboutUs"
+import Contact from "./pages/Contact"
+import Services from "./pages/Services"
+import Navbar from "./components/shared/Navbar"
+
 function App() {
   return (
-    <main className="w-full flex flex-col justify-center items-center gap-4 max-w-8xl p-4">
-      <h1>Alioli</h1>
-      <img src="/descargar.jpg" className="size-80 relative" alt="aca" />
-      <h1 className="text-white-main absolute top-5/9 left-3/7 -translate-x-1/2 -translate-y-1/2">Una pagina web</h1>
+    <main className="w-full flex flex-col justify-center items-center bg-white-main dark:bg-black-main gap-4 max-w-8xl text-black dark:text-white">
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/sobre-nosotros" element={<AboutUs />} />
+        <Route path="/servicios" element={<Services />} />
+        <Route path="/contacto" element={<Contact />} />
+      </Routes>
     </main>
   )
 }
