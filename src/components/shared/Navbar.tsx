@@ -64,24 +64,6 @@ const Navbar = () => {
               </NavLink>
 
               <NavLink
-                to="/sobre-nosotros"
-                className={`rounded-md px-3 py-2 text-sm font-medium relative group hover:text-blue-secondary transition-all duration-300 ${
-                  pathname === "/sobre-nosotros"
-                    ? "text-blue-secondary"
-                    : "text-light"
-                }`}
-              >
-                Sobre Nosotros
-                <span
-                  className={`h-[2.5px] inline-block bg-blue-secondary absolute left-1/2 -translate-x-1/2 bottom-[1px] transition-[width] ease duration-[400ms] ${
-                    pathname === "/sobre-nosotros" ? "w-[80%]" : "w-0"
-                  }`}
-                >
-                  &nbsp;
-                </span>
-              </NavLink>
-
-              <NavLink
                 to="/servicios"
                 className={`rounded-md px-3 py-2 text-sm font-medium relative group hover:text-blue-secondary transition-all duration-300 ${
                   pathname === "/servicios"
@@ -93,6 +75,24 @@ const Navbar = () => {
                 <span
                   className={`h-[2.5px] inline-block bg-blue-secondary absolute left-1/2 -translate-x-1/2 bottom-[1px] transition-[width] ease duration-[400ms] ${
                     pathname === "/servicios" ? "w-[80%]" : "w-0"
+                  }`}
+                >
+                  &nbsp;
+                </span>
+              </NavLink>
+
+              <NavLink
+                to="/sobre-nosotros"
+                className={`rounded-md px-3 py-2 text-sm font-medium relative group hover:text-blue-secondary transition-all duration-300 ${
+                  pathname === "/sobre-nosotros"
+                    ? "text-blue-secondary"
+                    : "text-light"
+                }`}
+              >
+                Sobre Nosotros
+                <span
+                  className={`h-[2.5px] inline-block bg-blue-secondary absolute left-1/2 -translate-x-1/2 bottom-[1px] transition-[width] ease duration-[400ms] ${
+                    pathname === "/sobre-nosotros" ? "w-[80%]" : "w-0"
                   }`}
                 >
                   &nbsp;
@@ -124,13 +124,13 @@ const Navbar = () => {
 
         {/* Mobile menu, show/hide based on menu state. */}
         <div
-          className={`fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-start z-50 md:hidden transition-all duration-300 ${
+          className={`fixed inset-0 bg-black/80 bg-opacity-50 flex justify-end z-50 md:hidden transition-all duration-300 ${
             open ? "opacity-100 visible" : "opacity-0 invisible"
           }`}
         >
           <div
-            className={`bg-[#0F0F0F] w-[280px] h-full p-6 flex flex-col gap-6 transition-all duration-300 ${
-              open ? "translate-x-0" : "-translate-x-full"
+            className={`bg-white-main dark:bg-black-main w-[280px] h-full p-6 flex flex-col gap-6 transition-all duration-300 ${
+              open ? "-translate-x-0" : "translate-x-full"
             }`}
           >
             <div className="flex flex-row items-center justify-between">
@@ -156,8 +156,8 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   `block rounded-md px-3 py-2 text-base font-medium ${
                     isActive
-                      ? "bg-blue-secondary text-light"
-                      : "text-light hover:bg-blue-secondary/80 hover:text-light"
+                      ? "bg-blue-secondary text-white"
+                      : "hover:bg-blue-secondary/80 hover:text-white"
                   } transition-colors duration-300`
                 }
                 onClick={() => setOpen(false)}
@@ -166,26 +166,12 @@ const Navbar = () => {
               </NavLink>
 
               <NavLink
-                to="sobre-nosotros"
-                className={({ isActive }) =>
-                  `block rounded-md px-3 py-2 text-base font-medium ${
-                    isActive
-                      ? "bg-blue-secondary text-light"
-                      : "text-light hover:bg-blue-secondary/80 hover:text-light"
-                  } transition-colors duration-300`
-                }
-                onClick={() => setOpen(false)}
-              >
-                Sobre nosotros
-              </NavLink>
-
-              <NavLink
                 to="servicios"
                 className={({ isActive }) =>
                   `block rounded-md px-3 py-2 text-base font-medium ${
                     isActive
-                      ? "bg-blue-secondary text-light"
-                      : "text-light hover:bg-blue-secondary/80 hover:text-light"
+                      ? "bg-blue-secondary text-white"
+                      : "hover:bg-blue-secondary/80 hover:text-white"
                   } transition-colors duration-300`
                 }
                 onClick={() => setOpen(false)}
@@ -194,12 +180,26 @@ const Navbar = () => {
               </NavLink>
 
               <NavLink
+                to="sobre-nosotros"
+                className={({ isActive }) =>
+                  `block rounded-md px-3 py-2 text-base font-medium ${
+                    isActive
+                      ? "bg-blue-secondary text-white"
+                      : "hover:bg-blue-secondary/80 hover:text-white"
+                  } transition-colors duration-300`
+                }
+                onClick={() => setOpen(false)}
+              >
+                Sobre nosotros
+              </NavLink>
+
+              <NavLink
                 to="contacto"
                 className={({ isActive }) =>
                   `block rounded-md px-3 py-2 text-base font-medium ${
                     isActive
-                      ? "bg-blue-secondary text-light"
-                      : "text-light hover:bg-blue-secondary/80 hover:text-light"
+                      ? "bg-blue-secondary text-white"
+                      : "hover:bg-blue-secondary/80 hover:text-white"
                   } transition-colors duration-300`
                 }
                 onClick={() => setOpen(false)}
