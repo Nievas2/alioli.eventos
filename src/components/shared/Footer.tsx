@@ -12,44 +12,41 @@ export default function Footer() {
               <h3 className="text-xl font-bold italic  mb-2">
                 Sé un invitado más
               </h3>
-              <p className="text-lg ">
-                Servicio de catering integral
-              </p>
+              <p className="text-lg ">Servicio de catering integral</p>
             </div>
           </div>
 
           <div className="flex flex-col lg:w-1/3">
-            <h4 className="text-lg font-semibold mb-4">
-              Navegación
-            </h4>
+            <h4 className="text-lg font-semibold mb-4">Navegación</h4>
             <nav className="flex gap-18">
               <div className="flex flex-col gap-3">
                 <Link
                   to="/"
-                  className=" hover:text-red-400 transition-colors duration-300 text-base"
+                  className=" hover:text-red-main transition-colors duration-300 text-base"
                 >
                   Inicio
                 </Link>
 
                 <Link
                   to="/sobre-nosotros"
-                  className=" hover:text-red-400 transition-colors duration-300 text-base"
+                  className=" hover:text-red-main transition-colors duration-300 text-base"
                 >
                   Sobre Nosotros
+                </Link>
+                
+                <Link
+                  to="/servicios"
+                  className=" hover:text-red-main transition-colors duration-300 text-base"
+                >
+                  Servicios
                 </Link>
               </div>
 
               <div className="flex flex-col gap-3">
-                <Link
-                  to="/servicios"
-                  className=" hover:text-red-400 transition-colors duration-300 text-base"
-                >
-                  Servicios
-                </Link>
 
                 <Link
                   to="/contacto"
-                  className=" hover:text-red-400 transition-colors duration-300 text-base"
+                  className=" hover:text-red-main transition-colors duration-300 text-base"
                 >
                   Contactanos
                 </Link>
@@ -58,30 +55,40 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-col lg:w-1/3">
-            <h4 className="text-lg font-semibold mb-4">
-              Síguenos
-            </h4>
+            <h4 className="text-lg font-semibold mb-4">Síguenos</h4>
             <div className="flex flex-col gap-4">
               {/* <Link
                 to="#"
-                className="flex items-center gap-3  hover:text-red-400 transition-colors duration-300"
+                className="flex items-center gap-3  hover:text-red-main transition-colors duration-300"
               >
                 <Icon icon="ic:baseline-facebook" className="text-2xl" />
                 <span className="text-base">Facebook</span>
               </Link> */}
               <Link
-                to="#"
-                className="flex items-center gap-3  hover:text-red-400 transition-colors duration-300"
+                to="https://www.instagram.com/alioli.eventos"
+                about="_blank"
+                className="flex items-center gap-3  hover:text-red-main transition-colors duration-300"
               >
                 <Icon icon="mdi:instagram" className="text-2xl" />
                 <span className="text-base">Instagram</span>
               </Link>
+
               <Link
-                to="#"
-                className="flex items-center gap-3  hover:text-red-400 transition-colors duration-300"
+                to="https://wa.me/5491136801229"
+                about="_blank"
+                className="flex items-center gap-3  hover:text-red-main transition-colors duration-300"
               >
                 <Icon icon="ic:baseline-whatsapp" className="text-2xl" />
                 <span className="text-base">WhatsApp</span>
+              </Link>
+
+              <Link
+                to="https://www.google.com/maps/place/Derechos+del+Trabajador+953,+B1635+Pres.+Derqui,+Provincia+de+Buenos+Aires/data=!4m2!3m1!1s0x95bc9bddeeff905d:0x9fcba292fecaf735?utm_source=mstt_1&entry=gps&g_ep=CAESCTExLjQ4LjgwMRgAIP___________wEqAA%3D%3D"
+                about="_blank"
+                className="flex items-center gap-3  hover:text-red-main transition-colors duration-300"
+              >
+                <Icon icon="ic:baseline-place" className="text-2xl" />
+                <span className="text-base">Pilar, Buenos Aires, Argentina</span>
               </Link>
             </div>
           </div>
