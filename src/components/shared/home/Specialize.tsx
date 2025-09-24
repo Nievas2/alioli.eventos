@@ -2,7 +2,7 @@ const Specialize = () => {
   return (
     <div className="flex justify-center items-center w-full transition-colors duration-150 p-2 sm:p-6 md:p-16">
       <div className="w-full">
-        <div className="bg-opacity-25 bg-blue-secondary dark:backdrop-filter flex flex-col-reverse md:flex-row items-center justify-center gap-10 md:20 py-5 px-5 rounded-xl ">
+        <div className="bg-opacity-25 bg-blue-secondary dark:backdrop-filter flex flex-col-reverse md:flex-row items-center justify-center gap-10 md:20 py-5 px-5 rounded-xl text-white">
           <div className="flex flex-col gap-5 text-center lg:text-left leading-[normal] max-w-[600px]">
             <h2 className="text-[24px] lg:text-[36px] font-extrabold lg:text-left">
               Nos encargamos de que la pases bien
