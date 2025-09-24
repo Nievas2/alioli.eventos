@@ -19,3 +19,7 @@
 input {
   @apply focus:ring-0 outline-none;
 }
+
+textarea {
+  @apply focus:ring-0 outline-none;
+}
