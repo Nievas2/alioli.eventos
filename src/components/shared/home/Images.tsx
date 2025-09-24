@@ -1,13 +1,27 @@
 const Images = () => {
   return (
-    <div className="grid grid-cols-8 grid-rows-8 gap-4">
-      <div className="col-span-2 row-span-6">1</div>
-      <div className="col-span-2 row-span-2 col-start-1 row-start-7">2</div>
-      <div className="col-span-4 row-span-5 col-start-3 row-start-1">3</div>
-      <div className="col-span-2 row-span-4 col-start-7 row-start-1">4</div>
-      <div className="col-span-2 row-span-3 col-start-3 row-start-6">5</div>
-      <div className="col-span-2 row-span-3 col-start-5 row-start-6">6</div>
-      <div className="col-span-2 row-span-4 col-start-7 row-start-5">7</div>
+    <div className="grid grid-cols-1 gap-4 md:grid-cols-4 grid-rows-8 lg:grid-cols-8 lg:grid-rows-8">
+      <div className="col-span-1 md:col-span-2 md:row-span-3 lg:col-span-2 lg:row-span-6 bg-blue-main">
+        1
+      </div>
+      <div className="col-span-1 md:col-span-2 md:row-span-1 lg:col-span-2 lg:row-span-2 lg:col-start-1 lg:row-start-7 bg-blue-main">
+        2
+      </div>
+      <div className="col-span-1 md:col-span-2 md:row-span-2 lg:col-span-4 lg:row-span-5 lg:col-start-3 lg:row-start-1 bg-blue-main">
+        3
+      </div>
+      <div className="col-span-1 md:col-span-1 md:row-span-2 lg:col-span-2 lg:row-span-4 lg:col-start-7 lg:row-start-1 bg-blue-main">
+        4
+      </div>
+      <div className="col-span-1 md:col-span-1 md:row-span-2 lg:col-span-2 lg:row-span-3 lg:col-start-3 lg:row-start-6 bg-blue-main">
+        5
+      </div>
+      <div className="col-span-1 md:col-span-2 md:row-span-4 lg:col-span-2 lg:row-span-3 lg:col-start-5 lg:row-start-6 bg-blue-main">
+        6
+      </div>
+      <div className="col-span-1 md:col-span-2 md:row-span-2 lg:col-span-2 lg:row-span-4 lg:col-start-7 lg:row-start-5 bg-blue-main">
+        7
+      </div>
     </div>
   )
 }
