@@ -9,7 +9,7 @@ const Navbar = () => {
 
   return (
     <header className="sticky bg-[#fff1e7] dark:bg-[#0F0F0F] w-full top-0 z-50">
-      <nav className="mx-auto max-w-7xl px-2 md:px-8 py-3 w-full">
+      <nav className="mx-auto max-w-8xl px-2 md:px-8 py-3 w-full">
         <div className="flex items-center justify-between z-10 w-full">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
