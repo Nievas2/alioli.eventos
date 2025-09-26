@@ -1,4 +1,57 @@
+import { useEffect, useLayoutEffect } from "react"
+import { useLocation } from "react-router-dom"
+
 const Services = () => {
+  const location = useLocation()
+
+  // Función para hacer scroll al elemento
+  const scrollToElement = (elementId: string) => {
+    const element = document.getElementById(elementId)
+    if (element) {
+      // Obtener la posición del elemento
+      const elementPosition = element.getBoundingClientRect().top
+      const offsetPosition = elementPosition + window.pageYOffset - 80 // 80px offset para navbar
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      })
+    }
+  }
+
+  // Este useEffect se ejecuta cuando cambia la location
+  useEffect(() => {
+    const hash = location.hash
+    console.log("Hash detectado:", hash) // Para debug
+
+    if (hash) {
+      const elementId = hash.replace("#", "")
+      console.log("Buscando elemento con ID:", elementId) // Para debug
+
+      // Esperar a que el DOM se renderice completamente
+      const timeoutId = setTimeout(() => {
+        scrollToElement(elementId)
+      }, 100)
+
+      return () => clearTimeout(timeoutId)
+    } else {
+      // Si no hay hash, scroll al top
+      window.scrollTo({ top: 0, behavior: "smooth" })
+    }
+  }, [location.pathname, location.hash])
+
+  // useLayoutEffect como backup para casos donde el componente ya estaba montado
+  useLayoutEffect(() => {
+    const hash = location.hash
+    if (hash) {
+      const elementId = hash.replace("#", "")
+      // Usar requestAnimationFrame para asegurar que el layout esté completo
+      requestAnimationFrame(() => {
+        scrollToElement(elementId)
+      })
+    }
+  }, [location.hash])
+
   return (
     <div className="flex flex-col w-full transition-colors duration-150 relative gap-8 p-4 md:p-10">
       <div className="text-center mb-16">
@@ -11,19 +64,19 @@ const Services = () => {
         </p>
       </div>
 
-      <div className="md:hidden flex items-center justify-center">
+      {/* Separator */}
+      <div className="flex items-center justify-center mb-4">
         <div className="flex-1 h-px bg-gray-300 dark:bg-gray-600"></div>
         <div className="mx-6 w-3 h-3 bg-red-main rounded-full"></div>
         <div className="flex-1 h-px bg-gray-300 dark:bg-gray-600"></div>
       </div>
 
-      {/* First */}
-      <div className="flex flex-col items-center md:flex-row gap-4 z-20">
+      {/* First Service */}
+      <div className="flex flex-col items-center md:flex-row gap-4 z-20" id="1">
         <div className="flex flex-col gap-5">
           <h3 className="text-4xl font-bold text-blue-800 dark:text-blue-300 leading-tight">
             Catering Integral
           </h3>
-
           <div className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
             <p>
               Ofrecemos un servicio completo de catering que incluye menús
@@ -34,27 +87,26 @@ const Services = () => {
             </p>
           </div>
         </div>
-
         <img
           src="/logo.webp"
-          alt="How we optimize our work - Image"
+          alt="Catering Integral"
           className="w-[352px] lg:w-[40%] lg:max-w-[400px] lg:flex"
         />
       </div>
 
-      <div className="flex items-center justify-center">
+      {/* Separator */}
+      <div className="flex items-center justify-center" id="2">
         <div className="flex-1 h-px bg-gray-300 dark:bg-gray-600"></div>
         <div className="mx-6 w-3 h-3 bg-red-main rounded-full"></div>
         <div className="flex-1 h-px bg-gray-300 dark:bg-gray-600"></div>
       </div>
 
-      {/* Second */}
+      {/* Second Service */}
       <div className="flex flex-col items-center md:flex-row-reverse gap-4 xl:gap-[185px] z-20">
         <div className="flex flex-col gap-5">
           <h3 className="text-4xl font-bold text-red-600 dark:text-red-400 leading-tight md:text-right">
             Organización de Eventos
           </h3>
-
           <div className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 md:text-right">
             <p>
               Nos encargamos de cada detalle de tu evento, desde la
@@ -65,27 +117,26 @@ const Services = () => {
             </p>
           </div>
         </div>
-
         <img
           src="/logo.webp"
-          alt="How we optimize our work - Image"
+          alt="Organización de Eventos"
           className="w-[352px] lg:w-[40%] lg:max-w-[400px] lg:flex"
         />
       </div>
 
+      {/* Separator */}
       <div className="flex items-center justify-center">
         <div className="flex-1 h-px bg-gray-300 dark:bg-gray-600"></div>
         <div className="mx-6 w-3 h-3 bg-red-main rounded-full"></div>
         <div className="flex-1 h-px bg-gray-300 dark:bg-gray-600"></div>
       </div>
 
-      {/* Third */}
-      <div className="flex flex-col items-center md:flex-row gap-4 z-20">
+      {/* Third Service */}
+      <div id="3" className="flex flex-col items-center md:flex-row gap-4 z-20">
         <div className="flex flex-col gap-5">
           <h3 className="text-4xl font-bold text-blue-800 dark:text-blue-300 leading-tight">
-            Catering Integral
+            Servicio Premium
           </h3>
-
           <div className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
             <p>
               Ofrecemos un servicio completo de catering que incluye menús
@@ -96,13 +147,134 @@ const Services = () => {
             </p>
           </div>
         </div>
-
         <img
           src="/logo.webp"
-          alt="How we optimize our work - Image"
+          alt="Servicio Premium"
           className="w-[352px] lg:w-[40%] lg:max-w-[400px] lg:flex"
         />
       </div>
+
+      {/* Separator */}
+      <div className="flex items-center justify-center" id="2">
+        <div className="flex-1 h-px bg-gray-300 dark:bg-gray-600"></div>
+        <div className="mx-6 w-3 h-3 bg-red-main rounded-full"></div>
+        <div className="flex-1 h-px bg-gray-300 dark:bg-gray-600"></div>
+      </div>
+
+      {/* fourth Service */}
+      <div id="4" className="flex flex-col items-center md:flex-row-reverse gap-4 xl:gap-[185px] z-20">
+        <div className="flex flex-col gap-5">
+          <h3 className="text-4xl font-bold text-red-600 dark:text-red-400 leading-tight md:text-right">
+            Organización de Eventos
+          </h3>
+          <div className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 md:text-right">
+            <p>
+              Nos encargamos de cada detalle de tu evento, desde la
+              planificación inicial hasta la ejecución final. Coordinamos
+              proveedores, decoración, cronograma y logística completa. Tu única
+              preocupación será disfrutar de tu día especial mientras nosotros
+              nos ocupamos de que todo salga perfecto.
+            </p>
+          </div>
+        </div>
+        <img
+          src="/logo.webp"
+          alt="Organización de Eventos"
+          className="w-[352px] lg:w-[40%] lg:max-w-[400px] lg:flex"
+        />
+      </div>
+
+      {/* Separator */}
+      <div className="flex items-center justify-center">
+        <div className="flex-1 h-px bg-gray-300 dark:bg-gray-600"></div>
+        <div className="mx-6 w-3 h-3 bg-red-main rounded-full"></div>
+        <div className="flex-1 h-px bg-gray-300 dark:bg-gray-600"></div>
+      </div>
+
+      {/* fifth Service */}
+      <div id="5" className="flex flex-col items-center md:flex-row gap-4 z-20">
+        <div className="flex flex-col gap-5">
+          <h3 className="text-4xl font-bold text-blue-800 dark:text-blue-300 leading-tight">
+            Servicio Premium
+          </h3>
+          <div className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+            <p>
+              Ofrecemos un servicio completo de catering que incluye menús
+              personalizados, servicio de mesa profesional, y atención
+              especializada. Desde eventos íntimos hasta grandes celebraciones,
+              nos adaptamos a tus necesidades y presupuesto, garantizando una
+              experiencia gastronómica memorable para todos tus invitados.
+            </p>
+          </div>
+        </div>
+        <img
+          src="/logo.webp"
+          alt="Servicio Premium"
+          className="w-[352px] lg:w-[40%] lg:max-w-[400px] lg:flex"
+        />
+      </div>
+      
+      {/* Separator */}
+      <div className="flex items-center justify-center" id="2">
+        <div className="flex-1 h-px bg-gray-300 dark:bg-gray-600"></div>
+        <div className="mx-6 w-3 h-3 bg-red-main rounded-full"></div>
+        <div className="flex-1 h-px bg-gray-300 dark:bg-gray-600"></div>
+      </div>
+
+      {/* sixth Service */}
+      <div id="6" className="flex flex-col items-center md:flex-row-reverse gap-4 xl:gap-[185px] z-20">
+        <div className="flex flex-col gap-5">
+          <h3 className="text-4xl font-bold text-red-600 dark:text-red-400 leading-tight md:text-right">
+            Organización de Eventos
+          </h3>
+          <div className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 md:text-right">
+            <p>
+              Nos encargamos de cada detalle de tu evento, desde la
+              planificación inicial hasta la ejecución final. Coordinamos
+              proveedores, decoración, cronograma y logística completa. Tu única
+              preocupación será disfrutar de tu día especial mientras nosotros
+              nos ocupamos de que todo salga perfecto.
+            </p>
+          </div>
+        </div>
+        <img
+          src="/logo.webp"
+          alt="Organización de Eventos"
+          className="w-[352px] lg:w-[40%] lg:max-w-[400px] lg:flex"
+        />
+      </div>
+
+      {/* Separator */}
+      <div className="flex items-center justify-center">
+        <div className="flex-1 h-px bg-gray-300 dark:bg-gray-600"></div>
+        <div className="mx-6 w-3 h-3 bg-red-main rounded-full"></div>
+        <div className="flex-1 h-px bg-gray-300 dark:bg-gray-600"></div>
+      </div>
+
+      {/* seventh Service */}
+      <div id="7" className="flex flex-col items-center md:flex-row gap-4 z-20">
+        <div className="flex flex-col gap-5">
+          <h3 className="text-4xl font-bold text-blue-800 dark:text-blue-300 leading-tight">
+            Servicio Premium
+          </h3>
+          <div className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+            <p>
+              Ofrecemos un servicio completo de catering que incluye menús
+              personalizados, servicio de mesa profesional, y atención
+              especializada. Desde eventos íntimos hasta grandes celebraciones,
+              nos adaptamos a tus necesidades y presupuesto, garantizando una
+              experiencia gastronómica memorable para todos tus invitados.
+            </p>
+          </div>
+        </div>
+        <img
+          src="/logo.webp"
+          alt="Servicio Premium"
+          className="w-[352px] lg:w-[40%] lg:max-w-[400px] lg:flex"
+        />
+      </div>
+
+
     </div>
   )
 }
