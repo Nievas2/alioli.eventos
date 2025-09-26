@@ -2,6 +2,7 @@ import { Icon } from "@iconify/react"
 import { useState } from "react"
 import { Link, NavLink, useLocation } from "react-router-dom"
 import IconTheme from "./IconTheme"
+import { GoToUp } from "../../utils/functions/GoToUp"
 
 const Navbar = () => {
   const [open, setOpen] = useState(false)
@@ -12,7 +13,7 @@ const Navbar = () => {
       <nav className="mx-auto max-w-8xl px-2 md:px-8 py-3 w-full">
         <div className="flex items-center justify-between z-10 w-full">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
+          <Link onClick={GoToUp} to="/" className="flex items-center gap-2">
             <img
               src="/logo.webp"
               alt="logo"
@@ -48,6 +49,7 @@ const Navbar = () => {
           <div className="hidden md:ml-6 md:flex md:flex-1">
             <div className="flex w-full items-center justify-end text-center flex-row gap-2 re">
               <NavLink
+                onClick={GoToUp}
                 to="/"
                 className={`rounded-md px-3 py-2 text-sm font-medium relative group hover:text-blue-secondary transition-all duration-300 ${
                   pathname === "/" ? "text-blue-secondary" : "text-light"
@@ -64,6 +66,7 @@ const Navbar = () => {
               </NavLink>
 
               <NavLink
+                onClick={GoToUp}
                 to="/servicios"
                 className={`rounded-md px-3 py-2 text-sm font-medium relative group hover:text-blue-secondary transition-all duration-300 ${
                   pathname === "/servicios"
@@ -82,6 +85,7 @@ const Navbar = () => {
               </NavLink>
 
               <NavLink
+                onClick={GoToUp}
                 to="/sobre-nosotros"
                 className={`rounded-md px-3 py-2 text-sm font-medium relative group hover:text-blue-secondary transition-all duration-300 ${
                   pathname === "/sobre-nosotros"
@@ -100,6 +104,7 @@ const Navbar = () => {
               </NavLink>
 
               <NavLink
+                onClick={GoToUp}
                 to="/contacto"
                 className={`rounded-md px-3 py-2 text-sm font-medium relative group hover:text-blue-secondary transition-all duration-300 ${
                   pathname === "/contacto"
@@ -139,7 +144,10 @@ const Navbar = () => {
               <button
                 type="button"
                 className="self-start"
-                onClick={() => setOpen(false)}
+                onClick={() => {
+                  setOpen(false)
+                  GoToUp()
+                }}
               >
                 <Icon
                   className="text-light"
@@ -160,7 +168,10 @@ const Navbar = () => {
                       : "hover:bg-blue-secondary/80 hover:text-white"
                   } transition-colors duration-300`
                 }
-                onClick={() => setOpen(false)}
+                onClick={() => {
+                  setOpen(false)
+                  GoToUp()
+                }}
               >
                 Inicio
               </NavLink>
@@ -174,7 +185,10 @@ const Navbar = () => {
                       : "hover:bg-blue-secondary/80 hover:text-white"
                   } transition-colors duration-300`
                 }
-                onClick={() => setOpen(false)}
+                onClick={() => {
+                  setOpen(false)
+                  GoToUp()
+                }}
               >
                 Servicios
               </NavLink>
@@ -188,7 +202,10 @@ const Navbar = () => {
                       : "hover:bg-blue-secondary/80 hover:text-white"
                   } transition-colors duration-300`
                 }
-                onClick={() => setOpen(false)}
+                onClick={() => {
+                  setOpen(false)
+                  GoToUp()
+                }}
               >
                 Sobre nosotros
               </NavLink>
@@ -202,7 +219,10 @@ const Navbar = () => {
                       : "hover:bg-blue-secondary/80 hover:text-white"
                   } transition-colors duration-300`
                 }
-                onClick={() => setOpen(false)}
+                onClick={() => {
+                  setOpen(false)
+                  GoToUp()
+                }}
               >
                 Contactanos
               </NavLink>
