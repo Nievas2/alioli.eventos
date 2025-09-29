@@ -32,7 +32,7 @@ function App() {
 
         {/* WhatsApp */}
         <Link
-          to="https://api.whatsapp.com/send?phone=541123456789"
+          to="https://api.whatsapp.com/send?phone=5491136801229"
           target="_blank"
           rel="noopener noreferrer"
           className="fixed bottom-20 right-4 bg-green-500 text-white-main p-2 rounded-full"
