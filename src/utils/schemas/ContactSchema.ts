@@ -9,7 +9,7 @@ export const ContactSchema = zod.object({
     .string()
     .min(2, "Minimo 2 caracteres")
     .max(100, "Maximo 100 caracteres"),
-  phone: zod.string().min(10).max(10),
+  phone: zod.string().min(10).max(30),
   email: zod
     .string()
     .email("Formato de email incorrecto")

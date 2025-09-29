@@ -13,7 +13,7 @@ const ContactForm = () => {
   const [showError, setShowError] = useState(false)
   const [cooldownTime, setCooldownTime] = useState(0)
 
-  const COOLDOWN_DURATION = 30000 // 30 segundos
+  const COOLDOWN_DURATION = 60000
 
   const {
     register,
@@ -35,14 +35,13 @@ const ContactForm = () => {
 
   const { mutate, isPending, error } = useMutation({
     mutationKey: ["contact"],
-    mutationFn: async (formData : FormData) => {
+    mutationFn: async (formData: FormData) => {
       return await SendEmail(formData)
     },
     onError: (error) => {
       console.log(error)
       setShowError(true)
       setShowSuccess(false)
-      // Auto ocultar error después de 5 segundos
       setTimeout(() => setShowError(false), 5000)
     },
     onSuccess: (data) => {
@@ -50,13 +49,11 @@ const ContactForm = () => {
       setShowSuccess(true)
       setShowError(false)
       setLastSubmission(Date.now())
-      reset() // Limpiar el formulario
-      // Auto ocultar éxito después de 5 segundos
+      reset()
       setTimeout(() => setShowSuccess(false), 5000)
     },
   })
 
-  // Efecto para manejar el cooldown
   useEffect(() => {
     if (lastSubmission > 0) {
       const interval = setInterval(() => {
@@ -73,8 +70,7 @@ const ContactForm = () => {
     }
   }, [lastSubmission])
 
-  function onSubmit(values : any) {
-    // Verificar cooldown
+  function onSubmit(values: any) {
     if (cooldownTime > 0) {
       return
     }
@@ -100,49 +96,6 @@ const ContactForm = () => {
           Cuéntanos sobre tu evento y te contactaremos pronto
         </p>
       </div>
-
-      {/* Notificaciones */}
-      {showSuccess && (
-        <div className="mb-6 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-700 rounded-xl flex items-center gap-3 animate-pulse">
-          <Icon icon="mdi:check-circle" className="text-green-600 text-2xl flex-shrink-0" />
-          <div>
-            <p className="text-green-800 dark:text-green-200 font-semibold">
-              ¡Mensaje enviado con éxito!
-            </p>
-            <p className="text-green-700 dark:text-green-300 text-sm">
-              Te contactaremos pronto para coordinar todos los detalles de tu evento.
-            </p>
-          </div>
-        </div>
-      )}
-
-      {showError && (
-        <div className="mb-6 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-700 rounded-xl flex items-center gap-3">
-          <Icon icon="mdi:alert-circle" className="text-red-600 text-2xl flex-shrink-0" />
-          <div>
-            <p className="text-red-800 dark:text-red-200 font-semibold">
-              Error al enviar el mensaje
-            </p>
-            <p className="text-red-700 dark:text-red-300 text-sm">
-              {error?.message || "Hubo un problema al enviar tu mensaje. Por favor, inténtalo de nuevo."}
-            </p>
-          </div>
-        </div>
-      )}
-
-      {cooldownTime > 0 && (
-        <div className="mb-6 p-4 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-700 rounded-xl flex items-center gap-3">
-          <Icon icon="mdi:clock" className="text-yellow-600 text-2xl flex-shrink-0" />
-          <div>
-            <p className="text-yellow-800 dark:text-yellow-200 font-semibold">
-              Espera un momento
-            </p>
-            <p className="text-yellow-700 dark:text-yellow-300 text-sm">
-              Puedes enviar otro mensaje en {cooldownTime} segundos para evitar spam.
-            </p>
-          </div>
-        </div>
-      )}
 
       <div className="space-y-6 w-full">
         {/* Primera fila - Nombre y Email */}
@@ -271,8 +224,8 @@ const ContactForm = () => {
             onClick={handleSubmit(onSubmit)}
             className={`px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 flex items-center gap-3 ${
               isDisabled
-                ? 'bg-gray-300 dark:bg-gray-600 text-gray-500 dark:text-gray-400 cursor-not-allowed'
-                : 'bg-red-500 hover:bg-red-600 text-white shadow-lg hover:shadow-xl transform hover:scale-105'
+                ? "bg-gray-300 dark:bg-gray-600 text-gray-500 dark:text-gray-400 cursor-not-allowed"
+                : "bg-red-500 hover:bg-red-600 text-white shadow-lg hover:shadow-xl transform hover:scale-105 cursor-pointer"
             }`}
           >
             {isPending ? (
@@ -293,6 +246,61 @@ const ContactForm = () => {
             )}
           </button>
         </div>
+
+        {/* Notificaciones */}
+        {showSuccess && (
+          <div className="mb-6 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-700 rounded-xl flex items-center gap-3 animate-pulse">
+            <Icon
+              icon="mdi:check-circle"
+              className="text-green-600 text-2xl flex-shrink-0"
+            />
+            <div>
+              <p className="text-green-800 dark:text-green-200 font-semibold">
+                ¡Mensaje enviado con éxito!
+              </p>
+              <p className="text-green-700 dark:text-green-300 text-sm">
+                Te contactaremos pronto para coordinar todos los detalles de tu
+                evento.
+              </p>
+            </div>
+          </div>
+        )}
+
+        {showError && (
+          <div className="mb-6 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-700 rounded-xl flex items-center gap-3">
+            <Icon
+              icon="mdi:alert-circle"
+              className="text-red-600 text-2xl flex-shrink-0"
+            />
+            <div>
+              <p className="text-red-800 dark:text-red-200 font-semibold">
+                Error al enviar el mensaje
+              </p>
+              <p className="text-red-700 dark:text-red-300 text-sm">
+                {error?.message ||
+                  "Hubo un problema al enviar tu mensaje. Por favor, inténtalo de nuevo."}
+              </p>
+            </div>
+          </div>
+        )}
+
+        {cooldownTime > 0 && (
+          <div className="mb-6 p-4 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-700 rounded-xl flex items-center gap-3">
+            <Icon
+              icon="mdi:clock"
+              className="text-yellow-600 text-2xl flex-shrink-0"
+            />
+            <div>
+              <p className="text-yellow-800 dark:text-yellow-200 font-semibold">
+                Espera un momento
+              </p>
+              <p className="text-yellow-700 dark:text-yellow-300 text-sm">
+                Puedes enviar otro mensaje en {cooldownTime} segundos para
+                evitar spam.
+              </p>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   )
