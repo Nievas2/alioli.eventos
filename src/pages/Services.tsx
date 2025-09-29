@@ -1,16 +1,15 @@
 import { useEffect, useLayoutEffect } from "react"
 import { useLocation } from "react-router-dom"
+import { motion } from "motion/react"
 
 const Services = () => {
   const location = useLocation()
 
-  // Función para hacer scroll al elemento
   const scrollToElement = (elementId: string) => {
     const element = document.getElementById(elementId)
     if (element) {
-      // Obtener la posición del elemento
       const elementPosition = element.getBoundingClientRect().top
-      const offsetPosition = elementPosition + window.pageYOffset - 80 // 80px offset para navbar
+      const offsetPosition = elementPosition + window.pageYOffset - 150 // 150px offset para navbar
 
       window.scrollTo({
         top: offsetPosition,
@@ -19,33 +18,26 @@ const Services = () => {
     }
   }
 
-  // Este useEffect se ejecuta cuando cambia la location
   useEffect(() => {
     const hash = location.hash
-    console.log("Hash detectado:", hash) // Para debug
 
     if (hash) {
       const elementId = hash.replace("#", "")
-      console.log("Buscando elemento con ID:", elementId) // Para debug
 
-      // Esperar a que el DOM se renderice completamente
       const timeoutId = setTimeout(() => {
         scrollToElement(elementId)
       }, 100)
 
       return () => clearTimeout(timeoutId)
     } else {
-      // Si no hay hash, scroll al top
       window.scrollTo({ top: 0, behavior: "smooth" })
     }
   }, [location.pathname, location.hash])
 
-  // useLayoutEffect como backup para casos donde el componente ya estaba montado
   useLayoutEffect(() => {
     const hash = location.hash
     if (hash) {
       const elementId = hash.replace("#", "")
-      // Usar requestAnimationFrame para asegurar que el layout esté completo
       requestAnimationFrame(() => {
         scrollToElement(elementId)
       })
@@ -66,9 +58,21 @@ const Services = () => {
 
       {/* Separator */}
       <div className="flex items-center justify-center mb-4">
-        <div className="flex-1 h-px bg-gray-300 dark:bg-gray-600"></div>
-        <div className="mx-6 w-3 h-3 bg-red-main rounded-full"></div>
-        <div className="flex-1 h-px bg-gray-300 dark:bg-gray-600"></div>
+        <motion.div
+          initial={{ width: 0 }}
+          whileInView={{ width: "100%", transition: { duration: 2 } }}
+          className="flex items-center justify-end h-px bg-gray-300 dark:bg-gray-600"
+        ></motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          whileInView={{ opacity: 1, scale: 1, transition: { duration: 1 } }}
+          className="mx-6 size-4 px-2 bg-red-main rounded-full"
+        ></motion.div>
+        <motion.div
+          initial={{ width: 0 }}
+          whileInView={{ width: "100%", transition: { duration: 2 } }}
+          className="flex items-center justify-end h-px bg-gray-300 dark:bg-gray-600"
+        ></motion.div>
       </div>
 
       {/* First Service */}
@@ -96,9 +100,21 @@ const Services = () => {
 
       {/* Separator */}
       <div className="flex items-center justify-center" id="2">
-        <div className="flex-1 h-px bg-gray-300 dark:bg-gray-600"></div>
-        <div className="mx-6 w-3 h-3 bg-red-main rounded-full"></div>
-        <div className="flex-1 h-px bg-gray-300 dark:bg-gray-600"></div>
+        <motion.div
+          initial={{ width: 0 }}
+          whileInView={{ width: "100%", transition: { duration: 2 } }}
+          className="flex items-center justify-end h-px bg-gray-300 dark:bg-gray-600"
+        ></motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          whileInView={{ opacity: 1, scale: 1, transition: { duration: 1 } }}
+          className="mx-6 size-4 px-2 bg-red-main rounded-full"
+        ></motion.div>
+        <motion.div
+          initial={{ width: 0 }}
+          whileInView={{ width: "100%", transition: { duration: 2 } }}
+          className="flex items-center justify-end h-px bg-gray-300 dark:bg-gray-600"
+        ></motion.div>
       </div>
 
       {/* Second Service */}
@@ -126,9 +142,21 @@ const Services = () => {
 
       {/* Separator */}
       <div className="flex items-center justify-center">
-        <div className="flex-1 h-px bg-gray-300 dark:bg-gray-600"></div>
-        <div className="mx-6 w-3 h-3 bg-red-main rounded-full"></div>
-        <div className="flex-1 h-px bg-gray-300 dark:bg-gray-600"></div>
+        <motion.div
+          initial={{ width: 0 }}
+          whileInView={{ width: "100%", transition: { duration: 2 } }}
+          className="flex items-center justify-end h-px bg-gray-300 dark:bg-gray-600"
+        ></motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          whileInView={{ opacity: 1, scale: 1, transition: { duration: 1 } }}
+          className="mx-6 size-4 px-2 bg-red-main rounded-full"
+        ></motion.div>
+        <motion.div
+          initial={{ width: 0 }}
+          whileInView={{ width: "100%", transition: { duration: 2 } }}
+          className="flex items-center justify-end h-px bg-gray-300 dark:bg-gray-600"
+        ></motion.div>
       </div>
 
       {/* Third Service */}
@@ -156,13 +184,28 @@ const Services = () => {
 
       {/* Separator */}
       <div className="flex items-center justify-center" id="2">
-        <div className="flex-1 h-px bg-gray-300 dark:bg-gray-600"></div>
-        <div className="mx-6 w-3 h-3 bg-red-main rounded-full"></div>
-        <div className="flex-1 h-px bg-gray-300 dark:bg-gray-600"></div>
+        <motion.div
+          initial={{ width: 0 }}
+          whileInView={{ width: "100%", transition: { duration: 2 } }}
+          className="flex items-center justify-end h-px bg-gray-300 dark:bg-gray-600"
+        ></motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          whileInView={{ opacity: 1, scale: 1, transition: { duration: 1 } }}
+          className="mx-6 size-4 px-2 bg-red-main rounded-full"
+        ></motion.div>
+        <motion.div
+          initial={{ width: 0 }}
+          whileInView={{ width: "100%", transition: { duration: 2 } }}
+          className="flex items-center justify-end h-px bg-gray-300 dark:bg-gray-600"
+        ></motion.div>
       </div>
 
       {/* fourth Service */}
-      <div id="4" className="flex flex-col items-center md:flex-row-reverse gap-4 xl:gap-[185px] z-20">
+      <div
+        id="4"
+        className="flex flex-col items-center md:flex-row-reverse gap-4 xl:gap-[185px] z-20"
+      >
         <div className="flex flex-col gap-5">
           <h3 className="text-4xl font-bold text-red-600 dark:text-red-400 leading-tight md:text-right">
             Organización de Eventos
@@ -186,9 +229,21 @@ const Services = () => {
 
       {/* Separator */}
       <div className="flex items-center justify-center">
-        <div className="flex-1 h-px bg-gray-300 dark:bg-gray-600"></div>
-        <div className="mx-6 w-3 h-3 bg-red-main rounded-full"></div>
-        <div className="flex-1 h-px bg-gray-300 dark:bg-gray-600"></div>
+        <motion.div
+          initial={{ width: 0 }}
+          whileInView={{ width: "100%", transition: { duration: 2 } }}
+          className="flex items-center justify-end h-px bg-gray-300 dark:bg-gray-600"
+        ></motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          whileInView={{ opacity: 1, scale: 1, transition: { duration: 1 } }}
+          className="mx-6 size-4 px-2 bg-red-main rounded-full"
+        ></motion.div>
+        <motion.div
+          initial={{ width: 0 }}
+          whileInView={{ width: "100%", transition: { duration: 2 } }}
+          className="flex items-center justify-end h-px bg-gray-300 dark:bg-gray-600"
+        ></motion.div>
       </div>
 
       {/* fifth Service */}
@@ -213,16 +268,31 @@ const Services = () => {
           className="w-[352px] lg:w-[40%] lg:max-w-[400px] lg:flex"
         />
       </div>
-      
+
       {/* Separator */}
       <div className="flex items-center justify-center" id="2">
-        <div className="flex-1 h-px bg-gray-300 dark:bg-gray-600"></div>
-        <div className="mx-6 w-3 h-3 bg-red-main rounded-full"></div>
-        <div className="flex-1 h-px bg-gray-300 dark:bg-gray-600"></div>
+        <motion.div
+          initial={{ width: 0 }}
+          whileInView={{ width: "100%", transition: { duration: 2 } }}
+          className="flex items-center justify-end h-px bg-gray-300 dark:bg-gray-600"
+        ></motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          whileInView={{ opacity: 1, scale: 1, transition: { duration: 1 } }}
+          className="mx-6 size-4 px-2 bg-red-main rounded-full"
+        ></motion.div>
+        <motion.div
+          initial={{ width: 0 }}
+          whileInView={{ width: "100%", transition: { duration: 2 } }}
+          className="flex items-center justify-end h-px bg-gray-300 dark:bg-gray-600"
+        ></motion.div>
       </div>
 
       {/* sixth Service */}
-      <div id="6" className="flex flex-col items-center md:flex-row-reverse gap-4 xl:gap-[185px] z-20">
+      <div
+        id="6"
+        className="flex flex-col items-center md:flex-row-reverse gap-4 xl:gap-[185px] z-20"
+      >
         <div className="flex flex-col gap-5">
           <h3 className="text-4xl font-bold text-red-600 dark:text-red-400 leading-tight md:text-right">
             Organización de Eventos
@@ -246,9 +316,21 @@ const Services = () => {
 
       {/* Separator */}
       <div className="flex items-center justify-center">
-        <div className="flex-1 h-px bg-gray-300 dark:bg-gray-600"></div>
-        <div className="mx-6 w-3 h-3 bg-red-main rounded-full"></div>
-        <div className="flex-1 h-px bg-gray-300 dark:bg-gray-600"></div>
+        <motion.div
+          initial={{ width: 0 }}
+          whileInView={{ width: "100%", transition: { duration: 2 } }}
+          className="flex items-center justify-end h-px bg-gray-300 dark:bg-gray-600"
+        ></motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          whileInView={{ opacity: 1, scale: 1, transition: { duration: 1 } }}
+          className="mx-6 size-4 px-2 bg-red-main rounded-full"
+        ></motion.div>
+        <motion.div
+          initial={{ width: 0 }}
+          whileInView={{ width: "100%", transition: { duration: 2 } }}
+          className="flex items-center justify-end h-px bg-gray-300 dark:bg-gray-600"
+        ></motion.div>
       </div>
 
       {/* seventh Service */}
@@ -273,8 +355,6 @@ const Services = () => {
           className="w-[352px] lg:w-[40%] lg:max-w-[400px] lg:flex"
         />
       </div>
-
-
     </div>
   )
 }
