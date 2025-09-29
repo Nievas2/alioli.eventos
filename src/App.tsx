@@ -40,48 +40,50 @@ function App() {
 
   return (
     <main className="w-full min-h-screen h-full flex flex-col justify-center items-center gap-4 bg-white-main dark:bg-black-main text-black dark:text-white">
-      <ReactLenis root ref={lenisRef} className="max-w-8xl w-full relative">
-        <Navbar />
+      <ReactLenis root ref={lenisRef}>
+        <div className="max-w-8xl w-full relative">
+          <Navbar />
 
-        <div className="w-full h-full flex flex-col min-h-screen">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/sobre-nosotros" element={<AboutUs />} />
-            <Route path="/servicios" element={<Services />} />
-            <Route path="/contacto" element={<Contact />} />
-          </Routes>
-        </div>
+          <div className="w-full h-full flex flex-col min-h-screen">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/sobre-nosotros" element={<AboutUs />} />
+              <Route path="/servicios" element={<Services />} />
+              <Route path="/contacto" element={<Contact />} />
+            </Routes>
+          </div>
 
-        {/* Floating buttons */}
-        <div className="flex flex-col p-4 fixed bottom-0 right-0 gap-4">
-          {/* Go up */}
-          {showScrollTop && (
-            <motion.button
-              className="bg-red-main text-white-main p-2 rounded-full cursor-pointer min-h-12 min-w-12 w-full h-full"
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              initial={{ opacity: 0 }}
-              exit={{ opacity: 0 }}
-              animate={{ opacity: 1, transition: { duration: 0.5 } }}
+          {/* Floating buttons */}
+          <div className="flex flex-col p-4 fixed bottom-0 right-0 gap-4">
+            {/* Go up */}
+            {showScrollTop && (
+              <motion.button
+                className="bg-red-main text-white-main p-2 rounded-full cursor-pointer min-h-12 min-w-12 w-full h-full"
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                initial={{ opacity: 0 }}
+                exit={{ opacity: 0 }}
+                animate={{ opacity: 1, transition: { duration: 0.5 } }}
+              >
+                <Icon
+                  icon="material-symbols:arrow-upward-rounded"
+                  className="size-8"
+                />
+              </motion.button>
+            )}
+
+            {/* WhatsApp */}
+            <Link
+              to="https://api.whatsapp.com/send?phone=5491136801229"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-green-500 text-white-main p-2 rounded-full min-h-12 min-w-12 w-full h-full"
             >
-              <Icon
-                icon="material-symbols:arrow-upward-rounded"
-                className="size-8"
-              />
-            </motion.button>
-          )}
+              <Icon icon="mdi:whatsapp" className="size-8" />
+            </Link>
+          </div>
 
-          {/* WhatsApp */}
-          <Link
-            to="https://api.whatsapp.com/send?phone=5491136801229"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-green-500 text-white-main p-2 rounded-full min-h-12 min-w-12 w-full h-full"
-          >
-            <Icon icon="mdi:whatsapp" className="size-8" />
-          </Link>
+          <Footer />
         </div>
-
-        <Footer />
       </ReactLenis>
     </main>
   )
