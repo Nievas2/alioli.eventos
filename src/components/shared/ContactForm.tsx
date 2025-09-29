@@ -1,11 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
-import { useMutation } from "@tanstack/react-query"
-import { useState, useEffect } from "react"
-import { Icon } from "@iconify/react"
 import { ContactSchema } from "../../utils/schemas/ContactSchema"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useMutation } from "@tanstack/react-query"
 import SendEmail from "../../services/Email"
+import { useState, useEffect } from "react"
+import { useForm } from "react-hook-form"
+import { Icon } from "@iconify/react"
+import { motion } from "motion/react"
 
 const ContactForm = () => {
   const [lastSubmission, setLastSubmission] = useState(0)
@@ -88,11 +89,15 @@ const ContactForm = () => {
     <div className="flex flex-col justify-center items-center p-6 w-full">
       {/* Header */}
       <div className="text-center w-full">
-        <h2 className="text-4xl font-bold mb-4 text-blue-800 dark:text-blue-300">
+        <h2 className="text-4xl font-bold mb-4 text-blue-800 dark:text-blue-100">
           Contáctanos
         </h2>
-        <div className="w-20 h-1 bg-red-500 mx-auto mb-4"></div>
-        <p className="text-lg text-gray-600 dark:text-gray-400">
+        <motion.div
+          initial={{ width: 0 }}
+          animate={{ width: "150px", transition: { duration: 1 } }}
+          className="h-1 bg-red-main mx-auto mb-4"
+        ></motion.div>
+        <p className="text-lg text-gray-600 dark:text-gray-200">
           Cuéntanos sobre tu evento y te contactaremos pronto
         </p>
       </div>
@@ -205,7 +210,7 @@ const ContactForm = () => {
             {...register("message")}
             rows={5}
             placeholder="Describe tu evento, fecha tentativa, estilo que buscas, presupuesto aproximado, etc."
-            className="w-full px-4 py-3 border-2 border-gray-200 dark:border-gray-600 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-800 outline-none transition-all duration-300 resize-vertical bg-white dark:bg-gray-800"
+            className="w-full px-4 py-3 border-2 border-gray-200 dark:border-gray-600 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-800 outline-none transition-all duration-300 resize-vertical bg-white text-black dark:bg-gray-800 dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400"
             disabled={isDisabled}
           />
           {errors.message && (
