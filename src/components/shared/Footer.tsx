@@ -1,5 +1,6 @@
-import { Icon } from "@iconify/react"
 import { Link } from "react-router-dom"
+import { Icon } from "@iconify/react"
+import { motion } from "motion/react"
 
 export default function Footer() {
   return (
@@ -33,7 +34,7 @@ export default function Footer() {
                 >
                   Sobre Nosotros
                 </Link>
-                
+
                 <Link
                   to="/servicios"
                   className=" hover:text-red-main transition-colors duration-300 text-base"
@@ -43,7 +44,6 @@ export default function Footer() {
               </div>
 
               <div className="flex flex-col gap-3">
-
                 <Link
                   to="/contacto"
                   className=" hover:text-red-main transition-colors duration-300 text-base"
@@ -57,13 +57,6 @@ export default function Footer() {
           <div className="flex flex-col lg:w-1/3">
             <h4 className="text-lg font-semibold mb-4">Síguenos</h4>
             <div className="flex flex-col gap-4">
-              {/* <Link
-                to="#"
-                className="flex items-center gap-3  hover:text-red-main transition-colors duration-300"
-              >
-                <Icon icon="ic:baseline-facebook" className="text-2xl" />
-                <span className="text-base">Facebook</span>
-              </Link> */}
               <Link
                 to="https://www.instagram.com/alioli.eventos"
                 about="_blank"
@@ -88,13 +81,21 @@ export default function Footer() {
                 className="flex items-center gap-3  hover:text-red-main transition-colors duration-300"
               >
                 <Icon icon="ic:baseline-place" className="text-2xl" />
-                <span className="text-base">Pilar, Buenos Aires, Argentina</span>
+                <span className="text-base">
+                  Pilar, Buenos Aires, Argentina
+                </span>
               </Link>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-blue-700 mt-8 pt-6">
+        <div className="flex flex-col justify-center items-center mt-8 gap-4">
+          <motion.hr
+            initial={{ width: 0 }}
+            animate={{ width: "100%", transition: { duration: 1 } }}
+            className="text-blue-secondary m-1"
+          />
+
           <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4">
             <p className="text-sm">
               © 2025 Tu Empresa. Todos los derechos reservados.
