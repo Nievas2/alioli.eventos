@@ -1,6 +1,6 @@
 import ContactForm from "../components/shared/ContactForm"
+import Events from "../components/shared/home/events"
 import Hero from "../components/shared/home/Hero"
-import Images from "../components/shared/home/Images"
 import Specialize from "../components/shared/home/Specialize"
 
 const Home = () => {
@@ -8,7 +8,7 @@ const Home = () => {
     <main className="flex flex-col gap-24">
       <Hero />
       <Specialize />
-      <Images />
+      <Events />
       <ContactForm />
     </main>
   )
