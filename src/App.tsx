@@ -54,15 +54,15 @@ function App() {
           </div>
 
           {/* Floating buttons */}
-          <div className="flex flex-col p-4 fixed bottom-0 right-0 gap-4">
+          <div className="flex flex-col p-4 fixed bottom-0 right-0 gap-4 z-50">
             {/* Go up */}
             {showScrollTop && (
               <motion.button
                 className="bg-red-main text-white-main p-2 rounded-full cursor-pointer min-h-12 min-w-12 w-full h-full"
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                initial={{ opacity: 0 }}
-                exit={{ opacity: 0 }}
-                animate={{ opacity: 1, transition: { duration: 0.5 } }}
+                initial={{ opacity: 0, rotate: 360 }}
+                exit={{ opacity: 0, rotate: 360 }}
+                animate={{ opacity: 1, rotate: 0, transition: { duration: 1 } }}
               >
                 <Icon
                   icon="material-symbols:arrow-upward-rounded"
