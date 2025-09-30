@@ -76,9 +76,11 @@ function App() {
               to="https://api.whatsapp.com/send?phone=5491136801229"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-green-500 text-white-main p-2 rounded-full min-h-12 min-w-12 w-full h-full"
+              className="bg-green-500 hover:bg-green-400 text-white-main p-2 rounded-full min-h-12 min-w-12 w-full h-full flex items-center justify-center"
+              aria-label="Contact us on WhatsApp"
             >
-              <Icon icon="mdi:whatsapp" className="size-8" />
+              <Icon icon="mdi:whatsapp" className="size-8" aria-hidden="true" />
+              <span className="sr-only">Contactanos a WhatsApp</span>
             </Link>
           </div>
 
