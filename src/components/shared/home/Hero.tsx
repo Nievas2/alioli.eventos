@@ -4,7 +4,7 @@ const Hero = () => {
       <div className="p-4 flex flex-col items-center justify-center gap-6">
         <img src="/logo.webp" alt="logo" className="size-18" />
 
-        <h1 className="font-bold leading-10 tracking-wide text-5xl ">
+        <h1 className="font-bold leading-10 tracking-wide text-5xl text-center">
           <i>Sé un invitado más</i>
         </h1>
 
