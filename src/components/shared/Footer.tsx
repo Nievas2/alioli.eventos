@@ -67,7 +67,7 @@ export default function Footer() {
               </Link>
 
               <Link
-                to="https://wa.me/5491136801229"
+                to="https://api.whatsapp.com/send?phone=5491131760618"
                 about="_blank"
                 className="flex items-center gap-3  hover:text-red-main transition-colors duration-300"
               >

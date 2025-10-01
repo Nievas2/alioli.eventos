@@ -2,7 +2,7 @@ import { Icon } from "@iconify/react"
 import { useState } from "react"
 import { Link, NavLink, useLocation } from "react-router-dom"
 import IconTheme from "./IconTheme"
-import { GoToUp } from "../../utils/functions/GoToUp"
+import { GoToUp } from "@/utils/functions/GoToUp"
 
 const Navbar = () => {
   const [open, setOpen] = useState(false)

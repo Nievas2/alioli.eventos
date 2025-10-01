@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { ContactSchema } from "../../utils/schemas/ContactSchema"
+import { ContactSchema } from "@/utils/schemas/ContactSchema"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useMutation } from "@tanstack/react-query"
-import SendEmail from "../../services/Email"
+import SendEmail from "@/services/Email"
 import { useState, useEffect } from "react"
 import { useForm } from "react-hook-form"
 import { Icon } from "@iconify/react"
