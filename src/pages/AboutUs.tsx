@@ -19,10 +19,10 @@ const AboutUs = () => {
       {/* Main Content */}
       <section className="flex flex-col lg:flex-row gap-12 mb-16">
         {/* Logo Section */}
-        <div className="flex justify-center items-center min-w-80">
+        <div className="flex justify-center items-center md:min-w-80">
           <img
             src="/about-us/about.jpg"
-            className="w-80 h-80 object-cover rounded-2xl shadow-2xl border-4 border-blue-100 dark:border-blue-900"
+            className="size-60 md:size-80 object-cover rounded-2xl shadow-2xl border-4 border-blue-100 dark:border-blue-900"
             alt="Nosotros"
           />
           {/*  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-red-500/10 rounded-2xl"></div> */}
@@ -53,12 +53,12 @@ const AboutUs = () => {
 
       {/* Story Sections */}
       <section className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-        <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 p-8 rounded-2xl shadow-lg border border-blue-200 dark:border-blue-700">
+        <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 p-4 md:p-8 rounded-2xl shadow-lg border border-blue-200 dark:border-blue-700">
           <div className="flex items-center mb-4">
             <div className="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center mr-4">
               <Icon icon="mdi:heart" className="text-white text-2xl" />
             </div>
-            <h3 className="text-xl font-bold text-blue-800 dark:text-blue-300">
+            <h3 className="text-lg md:text-xl font-bold text-blue-800 dark:text-blue-300">
               Nuestra Pasión
             </h3>
           </div>
@@ -70,12 +70,12 @@ const AboutUs = () => {
           </p>
         </div>
 
-        <div className="bg-gradient-to-br from-red-50 to-red-100 dark:from-red-900/20 dark:to-red-800/20 p-8 rounded-2xl shadow-lg border border-red-200 dark:border-red-700">
+        <div className="bg-gradient-to-br from-red-50 to-red-100 dark:from-red-900/20 dark:to-red-800/20 p-4 md:p-8 rounded-2xl shadow-lg border border-red-200 dark:border-red-700">
           <div className="flex items-center mb-4">
             <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mr-4">
               <Icon icon="mdi:target" className="text-white text-2xl" />
             </div>
-            <h3 className="text-xl font-bold text-red-600 dark:text-red-400">
+            <h3 className="text-lg md:text-xl font-bold text-red-600 dark:text-red-400">
               Nuestra Misión
             </h3>
           </div>
@@ -90,8 +90,8 @@ const AboutUs = () => {
       {/* Additional Content */}
       <section className="space-y-8 mb-16">
         <div className="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30 p-8 rounded-2xl shadow-lg border-l-4 border-red-500">
-          <h3 className="text-2xl font-bold mb-4 text-red-600 dark:text-red-400 flex items-center">
-            <Icon icon="mdi:certificate" className="mr-3 text-blue-600" />
+          <h3 className="text-lg md:text-2xl font-bold mb-4 text-red-600 dark:text-red-400 flex items-center">
+            <Icon icon="mdi:certificate" className="size-8 mr-3 text-blue-600" />
             Nuestro Compromiso
           </h3>
           <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
@@ -110,38 +110,75 @@ const AboutUs = () => {
       {/* Partnership Section */}
       <section className="text-center bg-gradient-to-br from-blue-100 to-red-100 dark:from-blue-900/30 dark:to-red-900/30 p-12 rounded-3xl shadow-2xl border border-blue-200 dark:border-blue-700">
         <h3 className="text-4xl font-bold mb-4 bg-gradient-to-r from-red-600 to-blue-600 bg-clip-text text-transparent">
-          Por si no lo sabías
+          También podés encontrar nuestros productos en:
         </h3>
-        <div className="w-20 h-1 bg-gradient-to-r from-red-500 to-blue-500 mx-auto mb-6"></div>
-        <p className="text-xl font-light mb-8 opacity-80">
-          Estamos asociados con La Dulce Tradición
-        </p>
 
-        <div className="flex justify-center gap-6">
-          <Link
-            to="https://www.instagram.com/la.dulce.tradicion/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transform hover:scale-110 transition-all duration-300 hover:shadow-lg rounded-full"
-          >
-            <Icon
-              icon="mdi:instagram"
-              className="w-14 h-14 drop-shadow-lg"
-              style={{ color: "#E1306C" }}
-            />
-          </Link>
+        <div className="flex flex-col md:flex-row justify-center items-center gap-20 mt-8">
+          <div className="flex flex-col items-center w-fit">
+            <p className="text-2xl font-light mb-8 opacity-80">
+              La Dulce Tradición
+            </p>
+            <div className="flex justify-center gap-6">
+              <Link
+                to="https://www.instagram.com/la.dulce.tradicion/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transform hover:scale-110 transition-all duration-300 hover:shadow-lg rounded-full"
+              >
+                <Icon
+                  icon="mdi:instagram"
+                  className="w-14 h-14 drop-shadow-lg"
+                  style={{ color: "#E1306C" }}
+                />
+              </Link>
 
-          <Link
-            to="https://api.whatsapp.com/send/?phone=5491162569879"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transform hover:scale-110 transition-all duration-300 hover:shadow-lg rounded-full"
-          >
-            <Icon
-              icon="logos:whatsapp-icon"
-              className="w-14 h-14 drop-shadow-lg"
-            />
-          </Link>
+              <Link
+                to="https://api.whatsapp.com/send/?phone=5491162569879"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transform hover:scale-110 transition-all duration-300 hover:shadow-lg rounded-full"
+              >
+                <Icon
+                  icon="logos:whatsapp-icon"
+                  className="w-14 h-14 drop-shadow-lg"
+                />
+              </Link>
+            </div>
+          </div>
+
+          <div className="flex flex-col items-center w-40 h-0.5 md:w-0.5 md:h-40 bg-gradient-to-b from-violet-500 to-blue-500 " />
+
+          <div className="flex flex-col items-center w-fit">
+            <p className="text-2xl font-light mb-8 opacity-80">
+              Y Fiambres shop
+            </p>
+            <div className="flex justify-center gap-6">
+              <Link
+                to="https://www.instagram.com/la.dulce.tradicion/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transform hover:scale-110 transition-all duration-300 hover:shadow-lg rounded-full"
+              >
+                <Icon
+                  icon="mdi:instagram"
+                  className="w-14 h-14 drop-shadow-lg"
+                  style={{ color: "#E1306C" }}
+                />
+              </Link>
+
+              <Link
+                to="https://api.whatsapp.com/send/?phone=5491162569879"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transform hover:scale-110 transition-all duration-300 hover:shadow-lg rounded-full"
+              >
+                <Icon
+                  icon="logos:whatsapp-icon"
+                  className="w-14 h-14 drop-shadow-lg"
+                />
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
     </main>
