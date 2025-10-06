@@ -14,8 +14,7 @@ const Events = () => {
           className="h-1 bg-red-main mx-auto mb-4"
         ></motion.div>
         <p className="text-lg text-gray-600 dark:text-gray-200">
-          Aquí te mostramos algunos de nuestros eventos para que puedas
-          disfrutar de los mejores platillos.
+          Te mostramos algunos momentos vividos, ¡Esperamos que el próximo seas tú!.
         </p>
       </div>
 
