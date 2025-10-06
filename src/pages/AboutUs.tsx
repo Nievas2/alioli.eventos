@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 const AboutUs = () => {
   return (
-    <div className=" px-6 py-12">
+    <main className=" px-6 py-12">
       {/* Header Section */}
       <section className="text-center mb-16">
         <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-800 to-blue-600 bg-clip-text text-transparent">
@@ -17,46 +17,42 @@ const AboutUs = () => {
       </section>
 
       {/* Main Content */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
+      <section className="flex flex-col lg:flex-row gap-12 mb-16">
         {/* Logo Section */}
-        <div className="lg:col-span-1 flex justify-center lg:justify-start">
-          <div className="relative">
-            <img
-              src="/logo.webp"
-              className="w-80 h-80 object-contain rounded-2xl shadow-2xl border-4 border-blue-100 dark:border-blue-900"
-              alt="Nosotros"
-            />
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-red-500/10 rounded-2xl"></div>
-          </div>
+        <div className="flex justify-center items-center min-w-80">
+          <img
+            src="/about-us/about.jpg"
+            className="w-80 h-80 object-cover rounded-2xl shadow-2xl border-4 border-blue-100 dark:border-blue-900"
+            alt="Nosotros"
+          />
+          {/*  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-red-500/10 rounded-2xl"></div> */}
         </div>
 
         {/* Text Content */}
-        <div className="lg:col-span-2 space-y-8">
-          <div className="prose prose-lg max-w-none">
-            <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-5">
-              En el corazón de nuestra historia hay un grupo de amigos unidos
-              por una pasión inquebrantable: el amor por la buena comida, la
-              excelencia en el servicio y la alegría de crear experiencias
-              inolvidables. Fue esa conexión especial la que nos llevó a unirnos
-              con un propósito claro: ofrecer un servicio integral y
-              personalizado para eventos que transformen momentos especiales en
-              recuerdos imborrables.
-            </p>
+        <div className="flex flex-col items-center justify-center prose prose-lg max-w-none">
+          <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-5">
+            En el corazón de nuestra historia hay un grupo de amigos unidos por
+            una pasión inquebrantable: el amor por la buena comida, la
+            excelencia en el servicio y la alegría de crear experiencias
+            inolvidables. Fue esa conexión especial la que nos llevó a unirnos
+            con un propósito claro: ofrecer un servicio integral y personalizado
+            para eventos que transformen momentos especiales en recuerdos
+            imborrables.
+          </p>
 
-            <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-              Para lograrlo, nos esforzamos por estar siempre a la vanguardia.
-              Nos capacitamos de manera constante, explorando nuevas tendencias,
-              técnicas y estilos para ofrecerte un servicio innovador y de
-              calidad. Esta dedicación nos permite presentarte un amplio abanico
-              de opciones, desde menús exquisitos que deleitan el paladar hasta
-              detalles personalizados que reflejan tu visión y estilo.
-            </p>
-          </div>
+          <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+            Para lograrlo, nos esforzamos por estar siempre a la vanguardia. Nos
+            capacitamos de manera constante, explorando nuevas tendencias,
+            técnicas y estilos para ofrecerte un servicio innovador y de
+            calidad. Esta dedicación nos permite presentarte un amplio abanico
+            de opciones, desde menús exquisitos que deleitan el paladar hasta
+            detalles personalizados que reflejan tu visión y estilo.
+          </p>
         </div>
-      </div>
+      </section>
 
       {/* Story Sections */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
         <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 p-8 rounded-2xl shadow-lg border border-blue-200 dark:border-blue-700">
           <div className="flex items-center mb-4">
             <div className="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center mr-4">
@@ -89,10 +85,10 @@ const AboutUs = () => {
             que todo está en las mejores manos.
           </p>
         </div>
-      </div>
+      </section>
 
       {/* Additional Content */}
-      <div className="space-y-8 mb-16">
+      <section className="space-y-8 mb-16">
         <div className="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30 p-8 rounded-2xl shadow-lg border-l-4 border-red-500">
           <h3 className="text-2xl font-bold mb-4 text-red-600 dark:text-red-400 flex items-center">
             <Icon icon="mdi:certificate" className="mr-3 text-blue-600" />
@@ -109,7 +105,7 @@ const AboutUs = () => {
             verdaderamente especial.
           </p>
         </div>
-      </div>
+      </section>
 
       {/* Partnership Section */}
       <section className="text-center bg-gradient-to-br from-blue-100 to-red-100 dark:from-blue-900/30 dark:to-red-900/30 p-12 rounded-3xl shadow-2xl border border-blue-200 dark:border-blue-700">
@@ -148,7 +144,7 @@ const AboutUs = () => {
           </Link>
         </div>
       </section>
-    </div>
+    </main>
   )
 }
 
