@@ -86,7 +86,7 @@ const ContactForm = () => {
   const isDisabled = isPending || cooldownTime > 0
 
   return (
-    <div className="flex flex-col justify-center items-center p-6 w-full">
+    <div className="flex flex-col justify-center items-center gap-6 p-6 w-full">
       {/* Header */}
       <div className="text-center w-full">
         <h2 className="text-4xl font-bold mb-4 text-blue-800 dark:text-blue-100">
