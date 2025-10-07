@@ -21,20 +21,20 @@ const Events = () => {
         "col-span-1 md:col-span-2 md:row-span-1 lg:col-span-2 lg:row-span-2 lg:col-start-1 lg:row-start-7 h-full",
     },
     {
-      id: 3,
-      title: "MENU AL PLATO / CARNES",
-      description:
-        "Para un evento mas formal, con comida al plato y servicio de mesa...",
-      image: "/home/meats.webp",
-      gridClass:
-        "col-span-1 md:col-span-2 md:row-span-2 lg:col-span-4 lg:row-span-5 lg:col-start-3 lg:row-start-1 md:h-96 h-full",
-    },
-    {
       id: 4,
       title: "MESA DULCE Y TORTA",
       description:
         "Te resolvemos todo en un solo lugar. para sumar a tu servicio...",
       image: "/home/sweet-table.webp",
+      gridClass:
+        "col-span-1 md:col-span-2 md:row-span-2 lg:col-span-4 lg:row-span-5 lg:col-start-3 lg:row-start-1 md:h-96 h-full",
+    },
+    {
+      id: 3,
+      title: "MENU AL PLATO / CARNES",
+      description:
+        "Para un evento mas formal, con comida al plato y servicio de mesa...",
+      image: "/home/meats.webp",
       gridClass:
         "col-span-1 md:col-span-1 md:row-span-2 lg:col-span-2 lg:row-span-4 lg:col-start-7 lg:row-start-1 h-full",
     },
@@ -97,10 +97,10 @@ const Events = () => {
               <h3 className="text-white font-semibold text-xl">
                 {event.title}
               </h3>
-              
+
               <p className="text-xs text-white mt-2 line-clamp-1">
-                  {event.description}
-                </p>
+                {event.description}
+              </p>
             </div>
 
             {/* Overlay para desktop - visible en hover */}
