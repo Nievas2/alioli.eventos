@@ -75,69 +75,30 @@ const Services = () => {
         ></motion.div>
       </div>
 
-      {/* First Service */}
-      <div className="flex flex-col items-center md:flex-row gap-4 z-20" id="1">
-        <div className="flex flex-col gap-5">
+      {/* First Service PIZZA PARTY */}
+      <div
+        className="flex flex-col items-center justify-around md:flex-row gap-8 z-20"
+        id="1"
+      >
+        <div className="flex flex-col gap-5 w-fit">
           <h3 className="text-4xl font-bold text-blue-800 dark:text-blue-300 leading-tight">
-            Catering Integral
+            PIZZA PARTY
           </h3>
-          <div className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+          <div className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 max-w-[540px]">
+            <h5 className="text-lg font-bold">
+              Clasico servicio de pizza libre, ideal para un evento mas
+              descontracturado incluye:
+            </h5>
+
             <p>
-              Ofrecemos un servicio completo de catering que incluye menús
-              personalizados, servicio de mesa profesional, y atención
-              especializada. Desde eventos íntimos hasta grandes celebraciones,
-              nos adaptamos a tus necesidades y presupuesto, garantizando una
-              experiencia gastronómica memorable para todos tus invitados.
+              Entrada de canastitas surtidas, Pizza libre con variedad de
+              toppings, vajilla descartable, mozos y traslado incluidos.
+              Duracion 3hs aprox.
             </p>
           </div>
         </div>
-        <img
-          src="/logo.webp"
-          alt="Catering Integral"
-          className="w-[352px] lg:w-[40%] lg:max-w-[400px] lg:flex"
-        />
-      </div>
 
-      {/* Separator */}
-      <div className="flex items-center justify-center" id="2">
-        <motion.div
-          initial={{ width: 0 }}
-          whileInView={{ width: "100%", transition: { duration: 2 } }}
-          className="flex items-center justify-end h-px bg-gray-300 dark:bg-gray-600"
-        ></motion.div>
-        <motion.div
-          initial={{ opacity: 0, scale: 0 }}
-          whileInView={{ opacity: 1, scale: 1, transition: { duration: 1 } }}
-          className="mx-6 size-4 px-2 bg-red-main rounded-full"
-        ></motion.div>
-        <motion.div
-          initial={{ width: 0 }}
-          whileInView={{ width: "100%", transition: { duration: 2 } }}
-          className="flex items-center justify-end h-px bg-gray-300 dark:bg-gray-600"
-        ></motion.div>
-      </div>
-
-      {/* Second Service */}
-      <div className="flex flex-col items-center md:flex-row-reverse gap-4 xl:gap-[185px] z-20">
-        <div className="flex flex-col gap-5">
-          <h3 className="text-4xl font-bold text-red-600 dark:text-red-400 leading-tight md:text-right">
-            Organización de Eventos
-          </h3>
-          <div className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 md:text-right">
-            <p>
-              Nos encargamos de cada detalle de tu evento, desde la
-              planificación inicial hasta la ejecución final. Coordinamos
-              proveedores, decoración, cronograma y logística completa. Tu única
-              preocupación será disfrutar de tu día especial mientras nosotros
-              nos ocupamos de que todo salga perfecto.
-            </p>
-          </div>
-        </div>
-        <img
-          src="/logo.webp"
-          alt="Organización de Eventos"
-          className="w-[352px] lg:w-[40%] lg:max-w-[400px] lg:flex"
-        />
+        <div className="flex flex-col size-80 bg-[url('/services/pizza-party.webp')] bg-cover bg-center rounded-lg shadow-lg"></div>
       </div>
 
       {/* Separator */}
@@ -159,31 +120,39 @@ const Services = () => {
         ></motion.div>
       </div>
 
-      {/* Third Service */}
-      <div id="3" className="flex flex-col items-center md:flex-row gap-4 z-20">
-        <div className="flex flex-col gap-5">
-          <h3 className="text-4xl font-bold text-blue-800 dark:text-blue-300 leading-tight">
-            Servicio Premium
+      {/* Second Service LUNCH PARTY */}
+      <div
+        className="flex flex-col items-center justify-around md:flex-row-reverse gap-8 z-20"
+        id="2"
+      >
+        <div className="flex flex-col gap-5 w-fit">
+          <h3 className="text-4xl font-bold text-red-600 dark:text-red-400 leading-tight">
+            LUNCH PARTY
           </h3>
-          <div className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+          <div className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 max-w-[540px]">
+            <h5 className="text-lg font-bold">
+              Evento descontracturado tipo buffet. Incluye:
+            </h5>
+
             <p>
-              Ofrecemos un servicio completo de catering que incluye menús
-              personalizados, servicio de mesa profesional, y atención
-              especializada. Desde eventos íntimos hasta grandes celebraciones,
-              nos adaptamos a tus necesidades y presupuesto, garantizando una
-              experiencia gastronómica memorable para todos tus invitados.
+              Entrada tabla de fiambres, fileteado de pernil y armado
+              sanguchitos.
+            </p>
+
+            <p>Variedad canastitas, lunch, migas, bagels.</p>
+
+            <p>
+              Vajilla descartable, mozos y traslado incluidos. Duracion 3hs
+              aprox.
             </p>
           </div>
         </div>
-        <img
-          src="/logo.webp"
-          alt="Servicio Premium"
-          className="w-[352px] lg:w-[40%] lg:max-w-[400px] lg:flex"
-        />
+
+        <div className="flex flex-col size-80 bg-[url('/services/lunch.webp')] bg-cover bg-center bg-no-repeat rounded-lg shadow-lg"></div>
       </div>
 
       {/* Separator */}
-      <div className="flex items-center justify-center" id="2">
+      <div className="flex items-center justify-center">
         <motion.div
           initial={{ width: 0 }}
           whileInView={{ width: "100%", transition: { duration: 2 } }}
@@ -201,30 +170,74 @@ const Services = () => {
         ></motion.div>
       </div>
 
-      {/* fourth Service */}
+      {/* Third Service MENU AL PLATO / CARNES */}
       <div
+        className="flex flex-col items-center justify-around md:flex-row gap-8 z-20"
+        id="3"
+      >
+        <div className="flex flex-col gap-5 w-fit">
+          <h3 className="text-4xl font-bold text-blue-800 dark:text-blue-300 leading-tight">
+            MENU AL PLATO / CARNES
+          </h3>
+          <div className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 max-w-[540px]">
+            <p>
+              Para un evento mas formal, con comida al plato y servicio de mesa.
+              Menu personalizado, con cortes de carne, ensaladas, entrada y
+              postre inlcuye alquiler de Vajilla, mozos y traslado. Duracion 3hs
+              aprox.
+            </p>
+          </div>
+        </div>
+
+        <div className="flex flex-col size-80 bg-[url('/services/meats.webp')] bg-cover bg-center rounded-lg shadow-lg"></div>
+      </div>
+
+      {/* Separator */}
+      <div className="flex items-center justify-center">
+        <motion.div
+          initial={{ width: 0 }}
+          whileInView={{ width: "100%", transition: { duration: 2 } }}
+          className="flex items-center justify-end h-px bg-gray-300 dark:bg-gray-600"
+        ></motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          whileInView={{ opacity: 1, scale: 1, transition: { duration: 1 } }}
+          className="mx-6 size-4 px-2 bg-red-main rounded-full"
+        ></motion.div>
+        <motion.div
+          initial={{ width: 0 }}
+          whileInView={{ width: "100%", transition: { duration: 2 } }}
+          className="flex items-center justify-end h-px bg-gray-300 dark:bg-gray-600"
+        ></motion.div>
+      </div>
+
+      {/* fourth Service MESA DULCE Y TORTA */}
+      <div
+        className="flex flex-col items-center justify-around md:flex-row-reverse gap-8 z-20"
         id="4"
-        className="flex flex-col items-center md:flex-row-reverse gap-4 xl:gap-[185px] z-20"
       >
-        <div className="flex flex-col gap-5">
-          <h3 className="text-4xl font-bold text-red-600 dark:text-red-400 leading-tight md:text-right">
-            Organización de Eventos
+        <div className="flex flex-col gap-5 w-fit">
+          <h3 className="text-4xl font-bold text-red-600 dark:text-red-400 leading-tight">
+            MESA DULCE Y TORTA
           </h3>
-          <div className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 md:text-right">
+          <div className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 max-w-[540px]">
+            <h5 className="text-lg font-bold">
+              Te resolvemos todo en un solo lugar. para sumar a tu servicio:
+            </h5>
+
             <p>
-              Nos encargamos de cada detalle de tu evento, desde la
-              planificación inicial hasta la ejecución final. Coordinamos
-              proveedores, decoración, cronograma y logística completa. Tu única
-              preocupación será disfrutar de tu día especial mientras nosotros
-              nos ocupamos de que todo salga perfecto.
+              <b>TORTA PRINCIPAL</b>, personalizable tanto en sabores como
+              decoracion y <b>MESA DULCE</b>, con variedad de postres.
+            </p>
+
+            <p>
+              Ademas, contamos con <b>CAFETERAS</b>, para el fin de fiesta, o
+              para acompañar el postre.
             </p>
           </div>
         </div>
-        <img
-          src="/logo.webp"
-          alt="Organización de Eventos"
-          className="w-[352px] lg:w-[40%] lg:max-w-[400px] lg:flex"
-        />
+
+        <div className="flex flex-col size-80 bg-[url('/services/sweet-table.webp')] bg-cover bg-center bg-no-repeat rounded-lg shadow-lg"></div>
       </div>
 
       {/* Separator */}
@@ -246,27 +259,34 @@ const Services = () => {
         ></motion.div>
       </div>
 
-      {/* fifth Service */}
-      <div id="5" className="flex flex-col items-center md:flex-row gap-4 z-20">
-        <div className="flex flex-col gap-5">
+      {/* fifth Service BEBIDAS */}
+      <div
+        className="flex flex-col items-center justify-around md:flex-row gap-8 z-20"
+        id="5"
+      >
+        <div className="flex flex-col gap-5 w-fit">
           <h3 className="text-4xl font-bold text-blue-800 dark:text-blue-300 leading-tight">
-            Servicio Premium
+            BEBIDAS
           </h3>
-          <div className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+
+          <div className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 max-w-[540px]">
+            <h5 className="text-lg font-bold">
+              Tambien podes agregar a tu evento la Bebida Libre.
+            </h5>
+
             <p>
-              Ofrecemos un servicio completo de catering que incluye menús
-              personalizados, servicio de mesa profesional, y atención
-              especializada. Desde eventos íntimos hasta grandes celebraciones,
-              nos adaptamos a tus necesidades y presupuesto, garantizando una
-              experiencia gastronómica memorable para todos tus invitados.
+              <b>Sin alcohol</b>: (gaseosas primera linea, jugos y agua, con
+              hielo y vajilla descartable)
+            </p>
+
+            <p>
+              <b>Con alcohol</b>: (Latas de cerveza, Vino tinto-blanco, fernet
+              campari y gancia) vajilla descartable o alquiler de vasos vidrio.
             </p>
           </div>
         </div>
-        <img
-          src="/logo.webp"
-          alt="Servicio Premium"
-          className="w-[352px] lg:w-[40%] lg:max-w-[400px] lg:flex"
-        />
+
+        <div className="flex flex-col size-80 bg-[url('/services/drinks.webp')] bg-cover bg-no-repeat bg-center rounded-lg shadow-lg"></div>
       </div>
 
       {/* Separator */}
@@ -288,30 +308,25 @@ const Services = () => {
         ></motion.div>
       </div>
 
-      {/* sixth Service */}
+      {/* sixth Service CORPORATIVOS */}
       <div
+        className="flex flex-col items-center justify-around md:flex-row-reverse gap-8 z-20"
         id="6"
-        className="flex flex-col items-center md:flex-row-reverse gap-4 xl:gap-[185px] z-20"
       >
-        <div className="flex flex-col gap-5">
-          <h3 className="text-4xl font-bold text-red-600 dark:text-red-400 leading-tight md:text-right">
-            Organización de Eventos
+        <div className="flex flex-col gap-5 w-fit">
+          <h3 className="text-4xl font-bold text-red-600 dark:text-red-400 leading-tight">
+            CORPORATIVOS
           </h3>
-          <div className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 md:text-right">
+          <div className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 max-w-[540px]">
             <p>
-              Nos encargamos de cada detalle de tu evento, desde la
-              planificación inicial hasta la ejecución final. Coordinamos
-              proveedores, decoración, cronograma y logística completa. Tu única
-              preocupación será disfrutar de tu día especial mientras nosotros
-              nos ocupamos de que todo salga perfecto.
+              Eventos empresariales, con buffet dulce o salado, coffee break,
+              todo personalizable. incluye mozos, vajilla descartable y
+              traslado.
             </p>
           </div>
         </div>
-        <img
-          src="/logo.webp"
-          alt="Organización de Eventos"
-          className="w-[352px] lg:w-[40%] lg:max-w-[400px] lg:flex"
-        />
+
+        <div className="flex flex-col size-80 bg-[url('/services/corporate.webp')] bg-cover bg-center bg-no-repeat rounded-lg shadow-lg"></div>
       </div>
 
       {/* Separator */}
@@ -333,27 +348,29 @@ const Services = () => {
         ></motion.div>
       </div>
 
-      {/* seventh Service */}
-      <div id="7" className="flex flex-col items-center md:flex-row gap-4 z-20">
-        <div className="flex flex-col gap-5">
+      {/* seventh Service MERIENDAS */}
+      <div
+        className="flex flex-col items-center justify-around md:flex-row gap-8 z-20"
+        id="7"
+      >
+        <div className="flex flex-col gap-5 w-fit">
           <h3 className="text-4xl font-bold text-blue-800 dark:text-blue-300 leading-tight">
-            Servicio Premium
+            MERIENDAS
           </h3>
-          <div className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+          <div className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 max-w-[540px]">
             <p>
-              Ofrecemos un servicio completo de catering que incluye menús
-              personalizados, servicio de mesa profesional, y atención
-              especializada. Desde eventos íntimos hasta grandes celebraciones,
-              nos adaptamos a tus necesidades y presupuesto, garantizando una
-              experiencia gastronómica memorable para todos tus invitados.
+              Coffee break, con alquiler de cafeteras, te, jugos y Pasteleria
+              tradicional (tartas, cookies, alfajores), Postres (minitortas,
+              shots), Torta principal y opciones saladas.
+            </p>
+
+            <p>
+              Incluye vajilla descartable, mozos y traslado. Duración 3hs aprox
             </p>
           </div>
         </div>
-        <img
-          src="/logo.webp"
-          alt="Servicio Premium"
-          className="w-[352px] lg:w-[40%] lg:max-w-[400px] lg:flex"
-        />
+
+        <div className="flex flex-col size-80 bg-[url('/services/snack.webp')] bg-cover bg-center rounded-lg shadow-lg"></div>
       </div>
     </div>
   )
