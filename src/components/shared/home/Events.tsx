@@ -84,7 +84,7 @@ const Events = () => {
         </p>
       </div>
 
-      <section className="grid grid-cols-1 gap-4 md:grid-cols-4 grid-rows-8 lg:grid-cols-8 lg:grid-rows-8 p-4">
+      <section className="grid grid-cols-1 gap-4 md:grid-cols-4 grid-rows-7 lg:grid-cols-8 lg:grid-rows-8 p-4">
         {events.map((event) => (
           <Link
             key={event.id}
