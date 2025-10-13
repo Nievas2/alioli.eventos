@@ -62,8 +62,7 @@ describe("ContactForm", () => {
       "Evento corporativo con aproximadamente 50 personas en Buenos Aires"
     )
   }
-  //4 5 6 11 12 13 14 15
-  /* funcionando todos */
+  
   describe("Renderizado inicial", () => {
     it("debe renderizar todos los campos del formulario", () => {
       renderWithProviders(<ContactForm />)
@@ -195,7 +194,6 @@ describe("ContactForm", () => {
     })
   })
 
-  /* funcionando todos */
   describe("Envío de formulario", () => {
     it("debe enviar el formulario con datos válidos", async () => {
       const mockSendEmail = vi.mocked(EmailService.default)
