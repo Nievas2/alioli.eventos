@@ -34,20 +34,15 @@ const ContactForm = () => {
     },
     resolver: zodResolver(ContactSchema),
   })
-
   const { mutate, isPending, error } = useMutation({
     mutationKey: ["contact"],
-    mutationFn: async (formData: FormData) => {
-      return await SendEmail(formData)
-    },
-    onError: (error) => {
-      console.log(error)
+    mutationFn: async (formData: FormData) => await SendEmail(formData),
+    onError: () => {
       setShowError(true)
       setShowSuccess(false)
       setTimeout(() => setShowError(false), 5000)
     },
-    onSuccess: (data) => {
-      console.log(data)
+    onSuccess: () => {
       setShowSuccess(true)
       setShowError(false)
       setLastSubmission(Date.now())
@@ -55,6 +50,17 @@ const ContactForm = () => {
       setTimeout(() => setShowSuccess(false), 5000)
     },
   })
+
+  function onSubmit(values: any) {
+    if (cooldownTime > 0) return
+
+    const formData = new FormData()
+    Object.keys(values).forEach((key) => {
+      formData.append(key, values[key])
+    })
+
+    mutate(formData)
+  }
 
   useEffect(() => {
     if (lastSubmission > 0) {
@@ -71,18 +77,6 @@ const ContactForm = () => {
       return () => clearInterval(interval)
     }
   }, [lastSubmission])
-
-  function onSubmit(values: any) {
-    if (cooldownTime > 0) {
-      return
-    }
-
-    const formData = new FormData()
-    Object.keys(values).forEach((key) => {
-      formData.append(key, values[key])
-    })
-    mutate(formData)
-  }
 
   const isDisabled = isPending || cooldownTime > 0
 
@@ -119,14 +113,15 @@ const ContactForm = () => {
         </p>
       </div>
 
-      <div className="space-y-6 w-full">
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 w-full">
         {/* Primera fila - Nombre y Email */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
           <div className="space-y-2">
-            <label className="block text-sm font-medium ">
+            <label htmlFor="name" className="block text-sm font-medium ">
               Nombre completo
             </label>
             <input
+              id="name"
               {...register("name")}
               placeholder="Tu nombre completo"
               className="w-full px-4 py-3 border-2 border-gray-200 dark:border-gray-600 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-800 outline-none transition-all duration-300 bg-white dark:bg-gray-800"
@@ -141,8 +136,11 @@ const ContactForm = () => {
           </div>
 
           <div className="space-y-2">
-            <label className="block text-sm font-medium ">Email</label>
+            <label htmlFor="email" className="block text-sm font-medium ">
+              Email
+            </label>
             <input
+              id="email"
               {...register("email")}
               type="email"
               placeholder="tu@email.com"
@@ -161,10 +159,11 @@ const ContactForm = () => {
         {/* Segunda fila - Teléfono y Lugar */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="space-y-2">
-            <label className="block text-sm font-medium ">
+            <label htmlFor="phone" className="block text-sm font-medium ">
               Número de teléfono
             </label>
             <input
+              id="phone"
               {...register("phone")}
               placeholder="+54 9 11 1234-5678"
               className="w-full px-4 py-3 border-2 border-gray-200 dark:border-gray-600 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-800 outline-none transition-all duration-300 bg-white dark:bg-gray-800"
@@ -179,10 +178,11 @@ const ContactForm = () => {
           </div>
 
           <div className="space-y-2">
-            <label className="block text-sm font-medium ">
+            <label htmlFor="location" className="block text-sm font-medium ">
               Lugar del evento
             </label>
             <input
+              id="location"
               {...register("location")}
               placeholder="Ciudad, provincia"
               className="w-full px-4 py-3 border-2 border-gray-200 dark:border-gray-600 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-800 outline-none transition-all duration-300 bg-white dark:bg-gray-800"
@@ -199,10 +199,11 @@ const ContactForm = () => {
 
         {/* Cantidad de personas */}
         <div className="space-y-2">
-          <label className="block text-sm font-medium ">
+          <label htmlFor="people" className="block text-sm font-medium ">
             Cantidad de personas
           </label>
           <input
+            id="people"
             {...register("people")}
             placeholder="Ej: 50 personas"
             className="w-full px-4 py-3 border-2 border-gray-200 dark:border-gray-600 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-800 outline-none transition-all duration-300 bg-white dark:bg-gray-800"
@@ -218,10 +219,11 @@ const ContactForm = () => {
 
         {/* Mensaje */}
         <div className="space-y-2">
-          <label className="block text-sm font-medium ">
+          <label htmlFor="message" className="block text-sm font-medium ">
             Cuéntanos sobre tu evento
           </label>
           <textarea
+            id="message"
             {...register("message")}
             rows={5}
             placeholder="Describe tu evento, fecha tentativa, estilo que buscas, presupuesto aproximado, etc."
@@ -241,7 +243,6 @@ const ContactForm = () => {
           <button
             type="submit"
             disabled={isDisabled}
-            onClick={handleSubmit(onSubmit)}
             className={`px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 flex items-center gap-3 ${
               isDisabled
                 ? "bg-gray-300 dark:bg-gray-600 text-gray-500 dark:text-gray-400 cursor-not-allowed"
@@ -315,13 +316,13 @@ const ContactForm = () => {
                 Espera un momento
               </p>
               <p className="text-yellow-700 dark:text-yellow-300 text-sm">
-                Puedes enviar otro mensaje en {cooldownTime} segundos para
+                Puedes enviar otro mensaje en {cooldownTime}s segundos para
                 evitar spam.
               </p>
             </div>
           </div>
         )}
-      </div>
+      </form>
     </div>
   )
 }
