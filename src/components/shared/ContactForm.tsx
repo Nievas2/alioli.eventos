@@ -88,7 +88,7 @@ const ContactForm = () => {
 
   return (
     <div
-      className={`flex flex-col justify-center items-center gap-6 p-6 w-full ${
+      className={`flex flex-col justify-center items-center gap-6 p-2 md:p-6 w-full ${
         pathname === "/contacto" ? "text-white" : "text-black dark:text-white"
       }`}
     >
