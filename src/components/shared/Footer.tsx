@@ -64,7 +64,7 @@ export default function Footer() {
             <div className="flex flex-col gap-4">
               <Link
                 to="https://www.instagram.com/alioli.eventos"
-                about="_blank"
+                target="_blank"
                 className="flex items-center gap-3  hover:text-red-main transition-colors duration-300"
               >
                 <Icon icon="mdi:instagram" className="text-2xl" />
@@ -73,7 +73,7 @@ export default function Footer() {
 
               <Link
                 to="https://api.whatsapp.com/send?phone=5491131760618"
-                about="_blank"
+                target="_blank"
                 className="flex items-center gap-3  hover:text-red-main transition-colors duration-300"
               >
                 <Icon icon="ic:baseline-whatsapp" className="text-2xl" />
@@ -82,7 +82,7 @@ export default function Footer() {
 
               <Link
                 to="https://www.google.com/maps/place/Derechos+del+Trabajador+953,+B1635+Pres.+Derqui,+Provincia+de+Buenos+Aires/data=!4m2!3m1!1s0x95bc9bddeeff905d:0x9fcba292fecaf735?utm_source=mstt_1&entry=gps&g_ep=CAESCTExLjQ4LjgwMRgAIP___________wEqAA%3D%3D"
-                about="_blank"
+                target="_blank"
                 className="flex items-center gap-3  hover:text-red-main transition-colors duration-300"
               >
                 <Icon icon="ic:baseline-place" className="text-2xl" />
