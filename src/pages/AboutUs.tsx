@@ -120,7 +120,7 @@ const AboutUs = () => {
             </p>
             <div className="flex justify-center gap-6">
               <Link
-                to="https://www.instagram.com/la.dulce.tradicion/"
+                to="https://www.instagram.com/ladulcetradicionpilar/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="transform hover:scale-110 transition-all duration-300 hover:shadow-lg rounded-full"
@@ -154,7 +154,7 @@ const AboutUs = () => {
             </p>
             <div className="flex justify-center gap-6">
               <Link
-                to="https://www.instagram.com/la.dulce.tradicion/"
+                to="https://www.instagram.com/ladulcetradicionpilar/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="transform hover:scale-110 transition-all duration-300 hover:shadow-lg rounded-full"
