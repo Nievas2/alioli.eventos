@@ -91,7 +91,10 @@ const AboutUs = () => {
       <section className="space-y-8 mb-16">
         <div className="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30 p-8 rounded-2xl shadow-lg border-l-4 border-red-500">
           <h3 className="text-lg md:text-2xl font-bold mb-4 text-red-600 dark:text-red-400 flex items-center">
-            <Icon icon="mdi:certificate" className="size-8 mr-3 text-blue-600" />
+            <Icon
+              icon="mdi:certificate"
+              className="size-8 mr-3 text-blue-600"
+            />
             Nuestro Compromiso
           </h3>
           <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
@@ -154,20 +157,19 @@ const AboutUs = () => {
             </p>
             <div className="flex justify-center gap-6">
               <Link
-                to="https://www.instagram.com/ladulcetradicionpilar/"
+                to="https://maps.app.goo.gl/m5yjQxhXDUhwTK9s6"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="transform hover:scale-110 transition-all duration-300 hover:shadow-lg rounded-full"
               >
                 <Icon
-                  icon="mdi:instagram"
-                  className="w-14 h-14 drop-shadow-lg"
-                  style={{ color: "#E1306C" }}
+                  icon="tdesign:location-filled"
+                  className="h-14 w-14 drop-shadow-lg"
                 />
               </Link>
 
               <Link
-                to="https://api.whatsapp.com/send/?phone=5491162569879"
+                to="https://api.whatsapp.com/send/?phone=5491168658324"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="transform hover:scale-110 transition-all duration-300 hover:shadow-lg rounded-full"
