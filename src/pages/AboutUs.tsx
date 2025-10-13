@@ -126,7 +126,7 @@ const AboutUs = () => {
                 to="https://www.instagram.com/ladulcetradicionpilar/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transform hover:scale-110 transition-all duration-300 hover:shadow-lg rounded-full"
+                className="transform hover:scale-110 transition-all duration-300 hover:text-shadow-lg"
               >
                 <Icon
                   icon="mdi:instagram"
@@ -139,7 +139,7 @@ const AboutUs = () => {
                 to="https://api.whatsapp.com/send/?phone=5491162569879"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transform hover:scale-110 transition-all duration-300 hover:shadow-lg rounded-full"
+                className="transform hover:scale-110 transition-all duration-300 hover:text-shadow-lg"
               >
                 <Icon
                   icon="logos:whatsapp-icon"
@@ -160,7 +160,7 @@ const AboutUs = () => {
                 to="https://maps.app.goo.gl/m5yjQxhXDUhwTK9s6"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transform hover:scale-110 transition-all duration-300 hover:shadow-lg rounded-full"
+                className="transform hover:scale-110 transition-all duration-300 hover:text-shadow-lg "
               >
                 <Icon
                   icon="tdesign:location-filled"
@@ -172,7 +172,7 @@ const AboutUs = () => {
                 to="https://api.whatsapp.com/send/?phone=5491168658324"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transform hover:scale-110 transition-all duration-300 hover:shadow-lg rounded-full"
+                className="transform hover:scale-110 transition-all duration-300 hover:text-shadow-lg"
               >
                 <Icon
                   icon="logos:whatsapp-icon"
