@@ -58,7 +58,7 @@ function App() {
             {/* Go up */}
             {showScrollTop && (
               <motion.button
-                className="bg-red-main text-white-main p-2 rounded-full cursor-pointer min-h-12 min-w-12 w-full h-full"
+                className="bg-red-main text-white-main p-2 rounded-full cursor-pointer min-h-12 min-w-12 w-full h-full hover:bg-red-main/80 flex items-center justify-center"
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                 initial={{ opacity: 0, rotate: 360 }}
                 exit={{ opacity: 0, rotate: 360 }}
@@ -68,6 +68,7 @@ function App() {
                   icon="material-symbols:arrow-upward-rounded"
                   className="size-8"
                 />
+                <span className="sr-only">Ir arriba</span>
               </motion.button>
             )}
 

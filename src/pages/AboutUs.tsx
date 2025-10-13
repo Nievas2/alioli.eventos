@@ -133,6 +133,7 @@ const AboutUs = () => {
                   className="w-14 h-14 drop-shadow-lg"
                   style={{ color: "#E1306C" }}
                 />
+                <span className="sr-only">Instagram de La Dulce Tradición</span>
               </Link>
 
               <Link
@@ -145,6 +146,7 @@ const AboutUs = () => {
                   icon="logos:whatsapp-icon"
                   className="w-14 h-14 drop-shadow-lg"
                 />
+                <span className="sr-only">WhatsApp de La Dulce Tradición</span>
               </Link>
             </div>
           </div>
@@ -166,6 +168,7 @@ const AboutUs = () => {
                   icon="tdesign:location-filled"
                   className="h-14 w-14 drop-shadow-lg"
                 />
+                <span className="sr-only">Instagram de Fiambres shop</span>
               </Link>
 
               <Link
@@ -178,6 +181,7 @@ const AboutUs = () => {
                   icon="logos:whatsapp-icon"
                   className="w-14 h-14 drop-shadow-lg"
                 />
+                <span className="sr-only">WhatsApp de Fiambres shop</span>
               </Link>
             </div>
           </div>
