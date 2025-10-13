@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import { Icon } from "@iconify/react"
 import { motion } from "motion/react"
+import { GoToUp } from "@/utils/functions/GoToUp"
 
 export default function Footer() {
   return (
@@ -22,22 +23,25 @@ export default function Footer() {
             <nav className="flex gap-18">
               <div className="flex flex-col gap-3">
                 <Link
-                  to="/"
                   className=" hover:text-red-main transition-colors duration-300 text-base"
+                  onClick={GoToUp}
+                  to="/"
                 >
                   Inicio
                 </Link>
 
                 <Link
-                  to="/sobre-nosotros"
                   className=" hover:text-red-main transition-colors duration-300 text-base"
+                  to="/sobre-nosotros"
+                  onClick={GoToUp}
                 >
                   Sobre Nosotros
                 </Link>
 
                 <Link
-                  to="/servicios"
                   className=" hover:text-red-main transition-colors duration-300 text-base"
+                  to="/servicios"
+                  onClick={GoToUp}
                 >
                   Servicios
                 </Link>
@@ -45,8 +49,9 @@ export default function Footer() {
 
               <div className="flex flex-col gap-3">
                 <Link
-                  to="/contacto"
                   className=" hover:text-red-main transition-colors duration-300 text-base"
+                  to="/contacto"
+                  onClick={GoToUp}
                 >
                   Contactanos
                 </Link>
@@ -67,7 +72,7 @@ export default function Footer() {
               </Link>
 
               <Link
-                to="https://api.whatsapp.com/send?phone=5491162569879"
+                to="https://api.whatsapp.com/send?phone=5491131760618"
                 about="_blank"
                 className="flex items-center gap-3  hover:text-red-main transition-colors duration-300"
               >
@@ -98,7 +103,7 @@ export default function Footer() {
 
           <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4">
             <p className="text-sm">
-              © 2025 Tu Empresa. Todos los derechos reservados.
+              © 2025 Alioli. Todos los derechos reservados.
             </p>
             <p className="text-sm">
               Diseñado con amor para tus eventos especiales
