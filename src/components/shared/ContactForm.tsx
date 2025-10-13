@@ -7,13 +7,14 @@ import { useState, useEffect } from "react"
 import { useForm } from "react-hook-form"
 import { Icon } from "@iconify/react"
 import { motion } from "motion/react"
+import { useLocation } from "react-router-dom"
 
 const ContactForm = () => {
   const [lastSubmission, setLastSubmission] = useState(0)
   const [showSuccess, setShowSuccess] = useState(false)
   const [showError, setShowError] = useState(false)
   const [cooldownTime, setCooldownTime] = useState(0)
-
+  const { pathname } = useLocation()
   const COOLDOWN_DURATION = 60000
 
   const {
@@ -86,10 +87,20 @@ const ContactForm = () => {
   const isDisabled = isPending || cooldownTime > 0
 
   return (
-    <div className="flex flex-col justify-center items-center gap-6 p-6 w-full">
+    <div
+      className={`flex flex-col justify-center items-center gap-6 p-6 w-full ${
+        pathname === "/contacto" ? "text-white" : "text-black dark:text-white"
+      }`}
+    >
       {/* Header */}
       <div className="text-center w-full">
-        <h2 className="text-4xl font-bold mb-4 text-blue-800 dark:text-blue-100">
+        <h2
+          className={`text-4xl font-bold mb-4 ${
+            pathname === "/contacto"
+              ? "text-white"
+              : "text-blue-800 dark:text-blue-100"
+          } `}
+        >
           Contáctanos
         </h2>
         <motion.div
@@ -97,7 +108,13 @@ const ContactForm = () => {
           animate={{ width: "150px", transition: { duration: 1 } }}
           className="h-1 bg-red-main mx-auto mb-4"
         ></motion.div>
-        <p className="text-lg text-gray-600 dark:text-gray-200">
+        <p
+          className={`text-lg ${
+            pathname === "/contacto"
+              ? "text-white"
+              : "text-gray-600 dark:text-gray-200"
+          }`}
+        >
           Cuéntanos sobre tu evento y te contactaremos pronto
         </p>
       </div>
@@ -106,7 +123,7 @@ const ContactForm = () => {
         {/* Primera fila - Nombre y Email */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
           <div className="space-y-2">
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+            <label className="block text-sm font-medium ">
               Nombre completo
             </label>
             <input
@@ -124,9 +141,7 @@ const ContactForm = () => {
           </div>
 
           <div className="space-y-2">
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-              Email
-            </label>
+            <label className="block text-sm font-medium ">Email</label>
             <input
               {...register("email")}
               type="email"
@@ -146,7 +161,7 @@ const ContactForm = () => {
         {/* Segunda fila - Teléfono y Lugar */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="space-y-2">
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+            <label className="block text-sm font-medium ">
               Número de teléfono
             </label>
             <input
@@ -164,7 +179,7 @@ const ContactForm = () => {
           </div>
 
           <div className="space-y-2">
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+            <label className="block text-sm font-medium ">
               Lugar del evento
             </label>
             <input
@@ -184,7 +199,7 @@ const ContactForm = () => {
 
         {/* Cantidad de personas */}
         <div className="space-y-2">
-          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+          <label className="block text-sm font-medium ">
             Cantidad de personas
           </label>
           <input
@@ -203,14 +218,14 @@ const ContactForm = () => {
 
         {/* Mensaje */}
         <div className="space-y-2">
-          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+          <label className="block text-sm font-medium ">
             Cuéntanos sobre tu evento
           </label>
           <textarea
             {...register("message")}
             rows={5}
             placeholder="Describe tu evento, fecha tentativa, estilo que buscas, presupuesto aproximado, etc."
-            className="w-full px-4 py-3 border-2 border-gray-200 dark:border-gray-600 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-800 outline-none transition-all duration-300 resize-vertical bg-white text-black dark:bg-gray-800 dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400"
+            className="w-full px-4 py-3 border-2 border-gray-200 dark:border-gray-600 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-800 outline-none transition-all duration-300 resize-vertical bg-white text-black dark:bg-gray-800 dark:text-white"
             disabled={isDisabled}
           />
           {errors.message && (

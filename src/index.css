@@ -17,9 +17,9 @@
 }
 
 input {
-  @apply focus:ring-0 outline-none;
+  @apply focus:ring-0 outline-none placeholder:text-gray-500 dark:placeholder:text-gray-400;
 }
 
 textarea {
-  @apply focus:ring-0 outline-none;
+  @apply focus:ring-0 outline-none placeholder:text-gray-500 dark:placeholder:text-gray-400;
 }
