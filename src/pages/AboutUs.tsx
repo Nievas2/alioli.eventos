@@ -31,22 +31,18 @@ const AboutUs = () => {
         {/* Text Content */}
         <div className="flex flex-col items-center justify-center prose prose-lg max-w-none">
           <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-5">
-            En el corazón de nuestra historia hay un grupo de amigos unidos por
-            una pasión inquebrantable: el amor por la buena comida, la
-            excelencia en el servicio y la alegría de crear experiencias
-            inolvidables. Fue esa conexión especial la que nos llevó a unirnos
-            con un propósito claro: ofrecer un servicio integral y personalizado
-            para eventos que transformen momentos especiales en recuerdos
-            imborrables.
+            Nuestra historia comienza con un grupo de amigos unidos por una
+            pasión: el amor por la buena comida, la excelencia en el servicio y
+            la alegría de crear experiencias inolvidables. Fue esa conexión
+            especial la que nos llevó a unirnos con un propósito claro: ofrecer
+            un servicio integral y personalizado para eventos.
           </p>
 
           <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-            Para lograrlo, nos esforzamos por estar siempre a la vanguardia. Nos
-            capacitamos de manera constante, explorando nuevas tendencias,
-            técnicas y estilos para ofrecerte un servicio innovador y de
-            calidad. Esta dedicación nos permite presentarte un amplio abanico
-            de opciones, desde menús exquisitos que deleitan el paladar hasta
-            detalles personalizados que reflejan tu visión y estilo.
+            Contando ya con 5 años de experiencia en la cocina de "La Dulce
+            Tradicion", solo nos restaba sumar el servicio en sus eventos para
+            que la experiencia sea completa, nuestro objetivo es que sean un
+            invitado más de su propia fiesta.
           </p>
         </div>
       </section>
