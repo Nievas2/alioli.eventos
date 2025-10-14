@@ -300,6 +300,10 @@ const IconTheme = () => {
           }
         />
       </motion.svg>
+      
+      <span className="sr-only">
+        Cambiar a {theme ? "modo oscuro" : "modo claro"}
+      </span>
     </button>
   )
 }
