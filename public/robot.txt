@@ -1,0 +1,12 @@
+# Permite a todos los bots rastrear todo el sitio
+User-agent: *
+Allow: /
+
+# Bloquea archivos y carpetas que no necesitan indexarse
+Disallow: /src/
+Disallow: /node_modules/
+Disallow: /*.json$
+Disallow: /*.ts$
+Disallow: /*.tsx$
+
+Sitemap: https://aliolieventos.com/sitemap.xml

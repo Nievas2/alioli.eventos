@@ -1,0 +1,120 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Página de inicio -->
+  <url>
+    <loc>https://aliolieventos.com/</loc>
+    <lastmod>2025-10-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://aliolieventos.com/logo.webp</image:loc>
+      <image:title>Logo Catering Alioli</image:title>
+    </image:image>
+  </url>
+
+  <!-- Servicios -->
+  <url>
+    <loc>https://aliolieventos.com/servicios</loc>
+    <lastmod>2025-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Sobre Nosotros -->
+  <url>
+    <loc>https://aliolieventos.com/sobre-nosotros</loc>
+    <lastmod>2025-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Contacto -->
+  <url>
+    <loc>https://aliolieventos.com/contacto</loc>
+    <lastmod>2025-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Servicios individuales con sus imágenes -->
+  <url>
+    <loc>https://aliolieventos.com/servicios#1</loc>
+    <lastmod>2025-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://aliolieventos.com/services/pizza-party.webp</image:loc>
+      <image:title>Pizza Party - Servicio de Catering</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://aliolieventos.com/servicios#2</loc>
+    <lastmod>2025-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://aliolieventos.com/services/lunch.webp</image:loc>
+      <image:title>Lunch Party - Servicio de Catering</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://aliolieventos.com/servicios#3</loc>
+    <lastmod>2025-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://aliolieventos.com/services/meats.webp</image:loc>
+      <image:title>Menú al Plato / Carnes - Servicio de Catering</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://aliolieventos.com/servicios#4</loc>
+    <lastmod>2025-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://aliolieventos.com/services/sweet-table.webp</image:loc>
+      <image:title>Mesa Dulce y Torta - Servicio de Catering</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://aliolieventos.com/servicios#5</loc>
+    <lastmod>2025-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://aliolieventos.com/services/drinks.webp</image:loc>
+      <image:title>Bebidas - Servicio de Catering</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://aliolieventos.com/servicios#6</loc>
+    <lastmod>2025-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://aliolieventos.com/services/corporate.webp</image:loc>
+      <image:title>Eventos Corporativos - Servicio de Catering</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://aliolieventos.com/servicios#7</loc>
+    <lastmod>2025-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://aliolieventos.com/services/snack.webp</image:loc>
+      <image:title>Meriendas y Coffee Break - Servicio de Catering</image:title>
+    </image:image>
+  </url>
+
+</urlset>
