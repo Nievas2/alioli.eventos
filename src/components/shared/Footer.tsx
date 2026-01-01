@@ -103,7 +103,8 @@ export default function Footer() {
 
           <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4">
             <p className="text-sm">
-              © 2025 Alioli. Todos los derechos reservados.
+              © {new Date().getFullYear()} Alioli. Todos los derechos
+              reservados.
             </p>
             <p className="text-sm">
               Diseñado con amor para tus eventos especiales
