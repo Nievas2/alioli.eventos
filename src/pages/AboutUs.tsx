@@ -21,7 +21,7 @@ const AboutUs = () => {
         {/* Logo Section */}
         <div className="flex justify-center items-center md:min-w-80">
           <img
-            src="/about-us/about.jpg"
+            src="/about-us/about.webp"
             className="size-60 md:size-80 object-cover rounded-2xl shadow-2xl border-4 border-blue-100 dark:border-blue-900"
             alt="Nosotros"
           />
